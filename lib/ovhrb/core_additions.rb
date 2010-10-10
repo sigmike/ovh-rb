@@ -27,3 +27,17 @@ class String
     underscore.humanize.gsub(/\b('?[a-z])/) { $1.capitalize }
   end
 end
+
+require 'net/http'
+# Source: http://github.com/awstin/ovh-soapi/blob/master/lib/ovh_soapi.rb
+# Get rid of SSL warning 
+# "warning: peer certificate won't be verified in this SSL session"
+class Net::HTTP
+  alias_method :old_initialize, :initialize
+  
+  def initialize(*args)
+    old_initialize(*args)
+    @ssl_context = OpenSSL::SSL::SSLContext.new
+    @ssl_context.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  end
+end
