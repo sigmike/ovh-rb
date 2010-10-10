@@ -4,7 +4,7 @@ module OvhRb
       require 'yaml'
       @config = YAML.load(File.read(config_file))
 
-      @shortcuts = @config["shortcuts"] || {}
+      @aliases = @config["aliases"] || {}
 
       OvhRb::Session.new(@config['nic'], @config['password']) do |session|
         @session = session
@@ -12,15 +12,15 @@ module OvhRb
       end
     end
     
-    def map_shortcuts(args)
+    def map_aliases(args)
       args.map do |arg|
-        @shortcuts[arg] || arg
+        @aliases[arg] || arg
       end
     end
     
     def method_missing(command, *args)
       if @session
-        @session.send(command, *map_shortcuts(args))
+        @session.send(command, *map_aliases(args))
       else
         super
       end

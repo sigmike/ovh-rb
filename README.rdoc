@@ -10,11 +10,11 @@ ovh-rb helps you to use the OVH SOAPI in a ruby way
 === Command line
 You can use the ovhrb script to run commands in a shell.
 
-First create a config file in YAML with your nic, password and shortcuts. For example:
+First create a YAML config file in with your nic, password and aliases. For example:
  ---
  nic: XXX-ovh
  password: XXX
- shortcuts:
+ aliases:
   ded1: ksXXX.kimsufi.com
   ded1_ip: X.X.X.X
   ded2: ksXXX.kimsufi.com
