@@ -18,7 +18,7 @@ OvhRb::Config.new(config_file) do |config|
     failovers = config.dedicated_failover_list(server)
     failovers.each do |server_failover|
       if server_failover.ip == failover
-        actual_route = server_failover.routed_to
+        actual_route = server_failover.routedTo
         if actual_route != expected_route
           config.dedicated_failover_update server, failover, expected_route
         end

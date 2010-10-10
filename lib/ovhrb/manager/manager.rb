@@ -37,14 +37,14 @@ class SupportThreadMessageDetailStruct
   attr_accessor :date
   attr_accessor :unread
   attr_accessor :type
-  attr_accessor :report_reason
+  attr_accessor :reportReason
 
-  def initialize(id = nil, date = nil, unread = nil, type = nil, report_reason = nil)
+  def initialize(id = nil, date = nil, unread = nil, type = nil, reportReason = nil)
     @id = id
     @date = date
     @unread = unread
     @type = type
-    @report_reason = report_reason
+    @reportReason = reportReason
   end
 end
 
@@ -58,15 +58,15 @@ class SupportThreadTreeReturn
   attr_accessor :subject
   attr_accessor :domain
   attr_accessor :closed
-  attr_accessor :report_reason
+  attr_accessor :reportReason
   attr_accessor :messages
 
-  def initialize(id = nil, subject = nil, domain = nil, closed = nil, report_reason = nil, messages = nil)
+  def initialize(id = nil, subject = nil, domain = nil, closed = nil, reportReason = nil, messages = nil)
     @id = id
     @subject = subject
     @domain = domain
     @closed = closed
-    @report_reason = report_reason
+    @reportReason = reportReason
     @messages = messages
   end
 end
@@ -79,22 +79,22 @@ class SupportMessageDetailReturn
 
   attr_accessor :id
   attr_accessor :thread
-  attr_accessor :unread_thread
-  attr_accessor :from_email
-  attr_accessor :date_sent
+  attr_accessor :unreadThread
+  attr_accessor :fromEmail
+  attr_accessor :dateSent
   attr_accessor :subject
   attr_accessor :body
-  attr_accessor :report_reason
+  attr_accessor :reportReason
 
-  def initialize(id = nil, thread = nil, unread_thread = nil, from_email = nil, date_sent = nil, subject = nil, body = nil, report_reason = nil)
+  def initialize(id = nil, thread = nil, unreadThread = nil, fromEmail = nil, dateSent = nil, subject = nil, body = nil, reportReason = nil)
     @id = id
     @thread = thread
-    @unread_thread = unread_thread
-    @from_email = from_email
-    @date_sent = date_sent
+    @unreadThread = unreadThread
+    @fromEmail = fromEmail
+    @dateSent = dateSent
     @subject = subject
     @body = body
-    @report_reason = report_reason
+    @reportReason = reportReason
   end
 end
 
@@ -132,14 +132,14 @@ class SupportSendMessageReturn
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["threadId", ["SOAP::SOAPInt", XSD::QName.new(nil, "threadId")]], ["messageId", ["SOAP::SOAPInt", XSD::QName.new(nil, "messageId")]], ["dateTime", ["SOAP::SOAPString", XSD::QName.new(nil, "dateTime")]]]
 
-  attr_accessor :thread_id
-  attr_accessor :message_id
-  attr_accessor :date_time
+  attr_accessor :threadId
+  attr_accessor :messageId
+  attr_accessor :dateTime
 
-  def initialize(thread_id = nil, message_id = nil, date_time = nil)
-    @thread_id = thread_id
-    @message_id = message_id
-    @date_time = date_time
+  def initialize(threadId = nil, messageId = nil, dateTime = nil)
+    @threadId = threadId
+    @messageId = messageId
+    @dateTime = dateTime
   end
 end
 
@@ -179,22 +179,22 @@ class TelephonyBillingAccountStruct
 
   attr_accessor :description
   attr_accessor :mobile
-  attr_accessor :mobile_destination
-  attr_accessor :expiration_date
+  attr_accessor :mobileDestination
+  attr_accessor :expirationDate
   attr_accessor :version
   attr_accessor :trusted
-  attr_accessor :pending_action
-  attr_accessor :description_user
+  attr_accessor :pendingAction
+  attr_accessor :descriptionUser
 
-  def initialize(description = nil, mobile = nil, mobile_destination = nil, expiration_date = nil, version = nil, trusted = nil, pending_action = nil, description_user = nil)
+  def initialize(description = nil, mobile = nil, mobileDestination = nil, expirationDate = nil, version = nil, trusted = nil, pendingAction = nil, descriptionUser = nil)
     @description = description
     @mobile = mobile
-    @mobile_destination = mobile_destination
-    @expiration_date = expiration_date
+    @mobileDestination = mobileDestination
+    @expirationDate = expirationDate
     @version = version
     @trusted = trusted
-    @pending_action = pending_action
-    @description_user = description_user
+    @pendingAction = pendingAction
+    @descriptionUser = descriptionUser
   end
 end
 
@@ -204,12 +204,12 @@ class TelephonyPendingActionStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["dateTodo", ["SOAP::SOAPString", XSD::QName.new(nil, "dateTodo")]], ["offer", ["SOAP::SOAPString", XSD::QName.new(nil, "offer")]], ["action", ["SOAP::SOAPString", XSD::QName.new(nil, "action")]]]
 
-  attr_accessor :date_todo
+  attr_accessor :dateTodo
   attr_accessor :offer
   attr_accessor :action
 
-  def initialize(date_todo = nil, offer = nil, action = nil)
-    @date_todo = date_todo
+  def initialize(dateTodo = nil, offer = nil, action = nil)
+    @dateTodo = dateTodo
     @offer = offer
     @action = action
   end
@@ -224,14 +224,14 @@ class TelephonyBillingAccountInfoChildrenStruct
   attr_accessor :number
   attr_accessor :offer
   attr_accessor :type
-  attr_accessor :expiration_date
+  attr_accessor :expirationDate
   attr_accessor :description
 
-  def initialize(number = nil, offer = nil, type = nil, expiration_date = nil, description = nil)
+  def initialize(number = nil, offer = nil, type = nil, expirationDate = nil, description = nil)
     @number = number
     @offer = offer
     @type = type
-    @expiration_date = expiration_date
+    @expirationDate = expirationDate
     @description = description
   end
 end
@@ -243,16 +243,16 @@ class TelephonyBillingAccountInfoReturn
   @@schema_element = [["offer", ["SOAP::SOAPString", XSD::QName.new(nil, "offer")]], ["consumtionTime", ["SOAP::SOAPString", XSD::QName.new(nil, "consumtionTime")]], ["outPlan", ["SOAP::SOAPString", XSD::QName.new(nil, "outPlan")]], ["facturationDate", ["SOAP::SOAPString", XSD::QName.new(nil, "facturationDate")]], ["children", ["MyArrayOfTelephonyBillingAccountInfoChildrenStructType", XSD::QName.new(nil, "children")]]]
 
   attr_accessor :offer
-  attr_accessor :consumtion_time
-  attr_accessor :out_plan
-  attr_accessor :facturation_date
+  attr_accessor :consumtionTime
+  attr_accessor :outPlan
+  attr_accessor :facturationDate
   attr_accessor :children
 
-  def initialize(offer = nil, consumtion_time = nil, out_plan = nil, facturation_date = nil, children = nil)
+  def initialize(offer = nil, consumtionTime = nil, outPlan = nil, facturationDate = nil, children = nil)
     @offer = offer
-    @consumtion_time = consumtion_time
-    @out_plan = out_plan
-    @facturation_date = facturation_date
+    @consumtionTime = consumtionTime
+    @outPlan = outPlan
+    @facturationDate = facturationDate
     @children = children
   end
 end
@@ -263,12 +263,12 @@ class TelephonyLineAliasPoolStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["poolNumber", ["SOAP::SOAPInt", XSD::QName.new(nil, "poolNumber")]], ["service", ["SOAP::SOAPString", XSD::QName.new(nil, "service")]], ["display", ["SOAP::SOAPString", XSD::QName.new(nil, "display")]]]
 
-  attr_accessor :pool_number
+  attr_accessor :poolNumber
   attr_accessor :service
   attr_accessor :display
 
-  def initialize(pool_number = nil, service = nil, display = nil)
-    @pool_number = pool_number
+  def initialize(poolNumber = nil, service = nil, display = nil)
+    @poolNumber = poolNumber
     @service = service
     @display = display
   end
@@ -281,29 +281,29 @@ class TelephonyLineStruct
   @@schema_element = [["number", ["SOAP::SOAPString", XSD::QName.new(nil, "number")]], ["billingAccount", ["SOAP::SOAPString", XSD::QName.new(nil, "billingAccount")]], ["offer", ["SOAP::SOAPString", XSD::QName.new(nil, "offer")]], ["type", ["SOAP::SOAPString", XSD::QName.new(nil, "type")]], ["service", ["SOAP::SOAPString", XSD::QName.new(nil, "service")]], ["expirationDate", ["SOAP::SOAPString", XSD::QName.new(nil, "expirationDate")]], ["description", ["SOAP::SOAPString", XSD::QName.new(nil, "description")]], ["betaGamaOffer", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "betaGamaOffer")]], ["setOn", ["SOAP::SOAPString", XSD::QName.new(nil, "setOn")]], ["aliasPool", ["TelephonyLineAliasPoolStruct", XSD::QName.new(nil, "aliasPool")]], ["pendingAction", ["TelephonyPendingActionStruct", XSD::QName.new(nil, "pendingAction")]]]
 
   attr_accessor :number
-  attr_accessor :billing_account
+  attr_accessor :billingAccount
   attr_accessor :offer
   attr_accessor :type
   attr_accessor :service
-  attr_accessor :expiration_date
+  attr_accessor :expirationDate
   attr_accessor :description
-  attr_accessor :beta_gama_offer
-  attr_accessor :set_on
-  attr_accessor :alias_pool
-  attr_accessor :pending_action
+  attr_accessor :betaGamaOffer
+  attr_accessor :setOn
+  attr_accessor :aliasPool
+  attr_accessor :pendingAction
 
-  def initialize(number = nil, billing_account = nil, offer = nil, type = nil, service = nil, expiration_date = nil, description = nil, beta_gama_offer = nil, set_on = nil, alias_pool = nil, pending_action = nil)
+  def initialize(number = nil, billingAccount = nil, offer = nil, type = nil, service = nil, expirationDate = nil, description = nil, betaGamaOffer = nil, setOn = nil, aliasPool = nil, pendingAction = nil)
     @number = number
-    @billing_account = billing_account
+    @billingAccount = billingAccount
     @offer = offer
     @type = type
     @service = service
-    @expiration_date = expiration_date
+    @expirationDate = expirationDate
     @description = description
-    @beta_gama_offer = beta_gama_offer
-    @set_on = set_on
-    @alias_pool = alias_pool
-    @pending_action = pending_action
+    @betaGamaOffer = betaGamaOffer
+    @setOn = setOn
+    @aliasPool = aliasPool
+    @pendingAction = pendingAction
   end
 end
 
@@ -320,7 +320,7 @@ class TelephonyLineListReturn
   end
 
   def alias=(value)
-    @v_alias = v_alias
+    @v_alias = value
   end
 
   def initialize(link = nil, v_alias = nil)
@@ -335,42 +335,42 @@ class TelephonyLineOptionsListReturn
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["identificationRestriction", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "identificationRestriction")]], ["anonymousCallRejection", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "anonymousCallRejection")]], ["doNotDisturb", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "doNotDisturb")]], ["absentSuscriber", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "absentSuscriber")]], ["lockOutCall", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "lockOutCall")]], ["lockOutCallPassword", ["SOAP::SOAPString", XSD::QName.new(nil, "lockOutCallPassword")]], ["forwardUnconditional", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "forwardUnconditional")]], ["forwardUnconditionalNumber", ["SOAP::SOAPString", XSD::QName.new(nil, "forwardUnconditionalNumber")]], ["forwardNoReply", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "forwardNoReply")]], ["forwardNoReplyDelay", ["SOAP::SOAPInt", XSD::QName.new(nil, "forwardNoReplyDelay")]], ["forwardNoReplyNumber", ["SOAP::SOAPString", XSD::QName.new(nil, "forwardNoReplyNumber")]], ["forwardBusy", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "forwardBusy")]], ["forwardBusyNumber", ["SOAP::SOAPString", XSD::QName.new(nil, "forwardBusyNumber")]], ["forwardBackup", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "forwardBackup")]], ["forwardBackupNumber", ["SOAP::SOAPString", XSD::QName.new(nil, "forwardBackupNumber")]], ["callWaiting", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "callWaiting")]], ["displayCallNumber", ["SOAP::SOAPString", XSD::QName.new(nil, "displayCallNumber")]]]
 
-  attr_accessor :identification_restriction
-  attr_accessor :anonymous_call_rejection
-  attr_accessor :do_not_disturb
-  attr_accessor :absent_suscriber
-  attr_accessor :lock_out_call
-  attr_accessor :lock_out_call_password
-  attr_accessor :forward_unconditional
-  attr_accessor :forward_unconditional_number
-  attr_accessor :forward_no_reply
-  attr_accessor :forward_no_reply_delay
-  attr_accessor :forward_no_reply_number
-  attr_accessor :forward_busy
-  attr_accessor :forward_busy_number
-  attr_accessor :forward_backup
-  attr_accessor :forward_backup_number
-  attr_accessor :call_waiting
-  attr_accessor :display_call_number
+  attr_accessor :identificationRestriction
+  attr_accessor :anonymousCallRejection
+  attr_accessor :doNotDisturb
+  attr_accessor :absentSuscriber
+  attr_accessor :lockOutCall
+  attr_accessor :lockOutCallPassword
+  attr_accessor :forwardUnconditional
+  attr_accessor :forwardUnconditionalNumber
+  attr_accessor :forwardNoReply
+  attr_accessor :forwardNoReplyDelay
+  attr_accessor :forwardNoReplyNumber
+  attr_accessor :forwardBusy
+  attr_accessor :forwardBusyNumber
+  attr_accessor :forwardBackup
+  attr_accessor :forwardBackupNumber
+  attr_accessor :callWaiting
+  attr_accessor :displayCallNumber
 
-  def initialize(identification_restriction = nil, anonymous_call_rejection = nil, do_not_disturb = nil, absent_suscriber = nil, lock_out_call = nil, lock_out_call_password = nil, forward_unconditional = nil, forward_unconditional_number = nil, forward_no_reply = nil, forward_no_reply_delay = nil, forward_no_reply_number = nil, forward_busy = nil, forward_busy_number = nil, forward_backup = nil, forward_backup_number = nil, call_waiting = nil, display_call_number = nil)
-    @identification_restriction = identification_restriction
-    @anonymous_call_rejection = anonymous_call_rejection
-    @do_not_disturb = do_not_disturb
-    @absent_suscriber = absent_suscriber
-    @lock_out_call = lock_out_call
-    @lock_out_call_password = lock_out_call_password
-    @forward_unconditional = forward_unconditional
-    @forward_unconditional_number = forward_unconditional_number
-    @forward_no_reply = forward_no_reply
-    @forward_no_reply_delay = forward_no_reply_delay
-    @forward_no_reply_number = forward_no_reply_number
-    @forward_busy = forward_busy
-    @forward_busy_number = forward_busy_number
-    @forward_backup = forward_backup
-    @forward_backup_number = forward_backup_number
-    @call_waiting = call_waiting
-    @display_call_number = display_call_number
+  def initialize(identificationRestriction = nil, anonymousCallRejection = nil, doNotDisturb = nil, absentSuscriber = nil, lockOutCall = nil, lockOutCallPassword = nil, forwardUnconditional = nil, forwardUnconditionalNumber = nil, forwardNoReply = nil, forwardNoReplyDelay = nil, forwardNoReplyNumber = nil, forwardBusy = nil, forwardBusyNumber = nil, forwardBackup = nil, forwardBackupNumber = nil, callWaiting = nil, displayCallNumber = nil)
+    @identificationRestriction = identificationRestriction
+    @anonymousCallRejection = anonymousCallRejection
+    @doNotDisturb = doNotDisturb
+    @absentSuscriber = absentSuscriber
+    @lockOutCall = lockOutCall
+    @lockOutCallPassword = lockOutCallPassword
+    @forwardUnconditional = forwardUnconditional
+    @forwardUnconditionalNumber = forwardUnconditionalNumber
+    @forwardNoReply = forwardNoReply
+    @forwardNoReplyDelay = forwardNoReplyDelay
+    @forwardNoReplyNumber = forwardNoReplyNumber
+    @forwardBusy = forwardBusy
+    @forwardBusyNumber = forwardBusyNumber
+    @forwardBackup = forwardBackup
+    @forwardBackupNumber = forwardBackupNumber
+    @callWaiting = callWaiting
+    @displayCallNumber = displayCallNumber
   end
 end
 
@@ -413,21 +413,21 @@ class TelephonyOfferInfoReturn
   attr_accessor :number
   attr_accessor :description
   attr_accessor :offer
-  attr_accessor :country_code
-  attr_accessor :next_billing_date
-  attr_accessor :simultaneous_lines
+  attr_accessor :countryCode
+  attr_accessor :nextBillingDate
+  attr_accessor :simultaneousLines
   attr_accessor :hardware
-  attr_accessor :sip_account
+  attr_accessor :sipAccount
 
-  def initialize(number = nil, description = nil, offer = nil, country_code = nil, next_billing_date = nil, simultaneous_lines = nil, hardware = nil, sip_account = nil)
+  def initialize(number = nil, description = nil, offer = nil, countryCode = nil, nextBillingDate = nil, simultaneousLines = nil, hardware = nil, sipAccount = nil)
     @number = number
     @description = description
     @offer = offer
-    @country_code = country_code
-    @next_billing_date = next_billing_date
-    @simultaneous_lines = simultaneous_lines
+    @countryCode = countryCode
+    @nextBillingDate = nextBillingDate
+    @simultaneousLines = simultaneousLines
     @hardware = hardware
-    @sip_account = sip_account
+    @sipAccount = sipAccount
   end
 end
 
@@ -440,17 +440,17 @@ class TelephonyOfferInfoSipAccountStruct
   attr_accessor :username
   attr_accessor :extension
   attr_accessor :domain
-  attr_accessor :last_login
-  attr_accessor :local_adress
-  attr_accessor :public_adress
+  attr_accessor :lastLogin
+  attr_accessor :localAdress
+  attr_accessor :publicAdress
 
-  def initialize(username = nil, extension = nil, domain = nil, last_login = nil, local_adress = nil, public_adress = nil)
+  def initialize(username = nil, extension = nil, domain = nil, lastLogin = nil, localAdress = nil, publicAdress = nil)
     @username = username
     @extension = extension
     @domain = domain
-    @last_login = last_login
-    @local_adress = local_adress
-    @public_adress = public_adress
+    @lastLogin = lastLogin
+    @localAdress = localAdress
+    @publicAdress = publicAdress
   end
 end
 
@@ -468,9 +468,9 @@ class TelephonyOfferInfoHardwareStruct
   attr_accessor :engage
   attr_accessor :status
   attr_accessor :port
-  attr_accessor :out_of_service
+  attr_accessor :outOfService
 
-  def initialize(brand = nil, model = nil, protocol = nil, mac = nil, ip = nil, engage = nil, status = nil, port = nil, out_of_service = nil)
+  def initialize(brand = nil, model = nil, protocol = nil, mac = nil, ip = nil, engage = nil, status = nil, port = nil, outOfService = nil)
     @brand = brand
     @model = model
     @protocol = protocol
@@ -479,7 +479,7 @@ class TelephonyOfferInfoHardwareStruct
     @engage = engage
     @status = status
     @port = port
-    @out_of_service = out_of_service
+    @outOfService = outOfService
   end
 end
 
@@ -493,22 +493,22 @@ class TelephonyCallStruct
   attr_accessor :date
   attr_accessor :duration
   attr_accessor :destination
-  attr_accessor :price_without_vat
+  attr_accessor :priceWithoutVAT
   attr_accessor :nature
-  attr_accessor :over_limit
+  attr_accessor :overLimit
   attr_accessor :type
-  attr_accessor :calling_number
+  attr_accessor :callingNumber
 
-  def initialize(number = nil, date = nil, duration = nil, destination = nil, price_without_vat = nil, nature = nil, over_limit = nil, type = nil, calling_number = nil)
+  def initialize(number = nil, date = nil, duration = nil, destination = nil, priceWithoutVAT = nil, nature = nil, overLimit = nil, type = nil, callingNumber = nil)
     @number = number
     @date = date
     @duration = duration
     @destination = destination
-    @price_without_vat = price_without_vat
+    @priceWithoutVAT = priceWithoutVAT
     @nature = nature
-    @over_limit = over_limit
+    @overLimit = overLimit
     @type = type
-    @calling_number = calling_number
+    @callingNumber = callingNumber
   end
 end
 
@@ -520,12 +520,12 @@ class TelephonyCallsSummaryDetailsStruct
 
   attr_accessor :count
   attr_accessor :duration
-  attr_accessor :price_without_vat
+  attr_accessor :priceWithoutVAT
 
-  def initialize(count = nil, duration = nil, price_without_vat = nil)
+  def initialize(count = nil, duration = nil, priceWithoutVAT = nil)
     @count = count
     @duration = duration
-    @price_without_vat = price_without_vat
+    @priceWithoutVAT = priceWithoutVAT
   end
 end
 
@@ -537,12 +537,12 @@ class TelephonyFaxSummaryDetailsStruct
 
   attr_accessor :count
   attr_accessor :pages
-  attr_accessor :price_without_vat
+  attr_accessor :priceWithoutVAT
 
-  def initialize(count = nil, pages = nil, price_without_vat = nil)
+  def initialize(count = nil, pages = nil, priceWithoutVAT = nil)
     @count = count
     @pages = pages
-    @price_without_vat = price_without_vat
+    @priceWithoutVAT = priceWithoutVAT
   end
 end
 
@@ -552,12 +552,12 @@ class TelephonyCallsSummaryStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["pricePlan", ["TelephonyCallsSummaryDetailsStruct", XSD::QName.new(nil, "pricePlan")]], ["outPlan", ["TelephonyCallsSummaryDetailsStruct", XSD::QName.new(nil, "outPlan")]]]
 
-  attr_accessor :price_plan
-  attr_accessor :out_plan
+  attr_accessor :pricePlan
+  attr_accessor :outPlan
 
-  def initialize(price_plan = nil, out_plan = nil)
-    @price_plan = price_plan
-    @out_plan = out_plan
+  def initialize(pricePlan = nil, outPlan = nil)
+    @pricePlan = pricePlan
+    @outPlan = outPlan
   end
 end
 
@@ -583,15 +583,15 @@ class TelephonyBillingAccountSummaryLineStruct
   @@schema_element = [["line", ["SOAP::SOAPString", XSD::QName.new(nil, "line")]], ["phoneNumber", ["SOAP::SOAPString", XSD::QName.new(nil, "phoneNumber")]], ["fixe", ["TelephonyCallsSummaryStruct", XSD::QName.new(nil, "fixe")]], ["special", ["TelephonyCallsSummaryStruct", XSD::QName.new(nil, "special")]], ["mobile", ["TelephonyCallsSummaryStruct", XSD::QName.new(nil, "mobile")]], ["fax", ["TelephonyFaxSummaryStruct", XSD::QName.new(nil, "fax")]]]
 
   attr_accessor :line
-  attr_accessor :phone_number
+  attr_accessor :phoneNumber
   attr_accessor :fixe
   attr_accessor :special
   attr_accessor :mobile
   attr_accessor :fax
 
-  def initialize(line = nil, phone_number = nil, fixe = nil, special = nil, mobile = nil, fax = nil)
+  def initialize(line = nil, phoneNumber = nil, fixe = nil, special = nil, mobile = nil, fax = nil)
     @line = line
-    @phone_number = phone_number
+    @phoneNumber = phoneNumber
     @fixe = fixe
     @special = special
     @mobile = mobile
@@ -606,12 +606,12 @@ class TelephonyBillingAccountSummaryBillingAccountStruct
   @@schema_element = [["name", ["SOAP::SOAPString", XSD::QName.new(nil, "name")]], ["betaGammaOffer", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "betaGammaOffer")]], ["mobile", ["TelephonyCallsSummaryStruct", XSD::QName.new(nil, "mobile")]]]
 
   attr_accessor :name
-  attr_accessor :beta_gamma_offer
+  attr_accessor :betaGammaOffer
   attr_accessor :mobile
 
-  def initialize(name = nil, beta_gamma_offer = nil, mobile = nil)
+  def initialize(name = nil, betaGammaOffer = nil, mobile = nil)
     @name = name
-    @beta_gamma_offer = beta_gamma_offer
+    @betaGammaOffer = betaGammaOffer
     @mobile = mobile
   end
 end
@@ -622,11 +622,11 @@ class TelephonyBillingAccountSummaryReturn
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["billingAccount", ["TelephonyBillingAccountSummaryBillingAccountStruct", XSD::QName.new(nil, "billingAccount")]], ["lines", ["MyArrayOfTelephonyBillingAccountSummaryLineStructType", XSD::QName.new(nil, "lines")]]]
 
-  attr_accessor :billing_account
+  attr_accessor :billingAccount
   attr_accessor :lines
 
-  def initialize(billing_account = nil, lines = nil)
-    @billing_account = billing_account
+  def initialize(billingAccount = nil, lines = nil)
+    @billingAccount = billingAccount
     @lines = lines
   end
 end
@@ -637,13 +637,13 @@ class TelephonyCallListReturn
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["fromDate", ["SOAP::SOAPString", XSD::QName.new(nil, "fromDate")]], ["toDate", ["SOAP::SOAPString", XSD::QName.new(nil, "toDate")]], ["list", ["MyArrayOfTelephonyCallStructType", XSD::QName.new(nil, "list")]]]
 
-  attr_accessor :from_date
-  attr_accessor :to_date
+  attr_accessor :fromDate
+  attr_accessor :toDate
   attr_accessor :list
 
-  def initialize(from_date = nil, to_date = nil, list = nil)
-    @from_date = from_date
-    @to_date = to_date
+  def initialize(fromDate = nil, toDate = nil, list = nil)
+    @fromDate = fromDate
+    @toDate = toDate
     @list = list
   end
 end
@@ -656,16 +656,16 @@ class TelephonyBillStruct
 
   attr_accessor :date
   attr_accessor :price
-  attr_accessor :order_id
-  attr_accessor :order_paid
-  attr_accessor :order_url
+  attr_accessor :orderId
+  attr_accessor :orderPaid
+  attr_accessor :orderUrl
 
-  def initialize(date = nil, price = nil, order_id = nil, order_paid = nil, order_url = nil)
+  def initialize(date = nil, price = nil, orderId = nil, orderPaid = nil, orderUrl = nil)
     @date = date
     @price = price
-    @order_id = order_id
-    @order_paid = order_paid
-    @order_url = order_url
+    @orderId = orderId
+    @orderPaid = orderPaid
+    @orderUrl = orderUrl
   end
 end
 
@@ -675,13 +675,13 @@ class TelephonyBillDetailsReturn
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["fromDate", ["SOAP::SOAPString", XSD::QName.new(nil, "fromDate")]], ["toDate", ["SOAP::SOAPString", XSD::QName.new(nil, "toDate")]], ["list", ["MyArrayOfTelephonyCallStructType", XSD::QName.new(nil, "list")]]]
 
-  attr_accessor :from_date
-  attr_accessor :to_date
+  attr_accessor :fromDate
+  attr_accessor :toDate
   attr_accessor :list
 
-  def initialize(from_date = nil, to_date = nil, list = nil)
-    @from_date = from_date
-    @to_date = to_date
+  def initialize(fromDate = nil, toDate = nil, list = nil)
+    @fromDate = fromDate
+    @toDate = toDate
     @list = list
   end
 end
@@ -693,39 +693,39 @@ class TelephonyVoicemailOptionsListReturn
   @@schema_element = [["redirection1", ["SOAP::SOAPString", XSD::QName.new(nil, "redirection1")]], ["redirection1Email", ["SOAP::SOAPString", XSD::QName.new(nil, "redirection1Email")]], ["redirection2", ["SOAP::SOAPString", XSD::QName.new(nil, "redirection2")]], ["redirection2Email", ["SOAP::SOAPString", XSD::QName.new(nil, "redirection2Email")]], ["redirection3", ["SOAP::SOAPString", XSD::QName.new(nil, "redirection3")]], ["redirection3Email", ["SOAP::SOAPString", XSD::QName.new(nil, "redirection3Email")]], ["redirection4", ["SOAP::SOAPString", XSD::QName.new(nil, "redirection4")]], ["redirection4Email", ["SOAP::SOAPString", XSD::QName.new(nil, "redirection4Email")]], ["redirection5", ["SOAP::SOAPString", XSD::QName.new(nil, "redirection5")]], ["redirection5Email", ["SOAP::SOAPString", XSD::QName.new(nil, "redirection5Email")]], ["annouceMessage", ["SOAP::SOAPString", XSD::QName.new(nil, "annouceMessage")]], ["keepMessage", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "keepMessage")]], ["audioformat", ["SOAP::SOAPString", XSD::QName.new(nil, "audioformat")]], ["fromEmail", ["SOAP::SOAPString", XSD::QName.new(nil, "fromEmail")]], ["fromName", ["SOAP::SOAPString", XSD::QName.new(nil, "fromName")]], ["forcePassword", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "forcePassword")]]]
 
   attr_accessor :redirection1
-  attr_accessor :redirection1_email
+  attr_accessor :redirection1Email
   attr_accessor :redirection2
-  attr_accessor :redirection2_email
+  attr_accessor :redirection2Email
   attr_accessor :redirection3
-  attr_accessor :redirection3_email
+  attr_accessor :redirection3Email
   attr_accessor :redirection4
-  attr_accessor :redirection4_email
+  attr_accessor :redirection4Email
   attr_accessor :redirection5
-  attr_accessor :redirection5_email
-  attr_accessor :annouce_message
-  attr_accessor :keep_message
+  attr_accessor :redirection5Email
+  attr_accessor :annouceMessage
+  attr_accessor :keepMessage
   attr_accessor :audioformat
-  attr_accessor :from_email
-  attr_accessor :from_name
-  attr_accessor :force_password
+  attr_accessor :fromEmail
+  attr_accessor :fromName
+  attr_accessor :forcePassword
 
-  def initialize(redirection1 = nil, redirection1_email = nil, redirection2 = nil, redirection2_email = nil, redirection3 = nil, redirection3_email = nil, redirection4 = nil, redirection4_email = nil, redirection5 = nil, redirection5_email = nil, annouce_message = nil, keep_message = nil, audioformat = nil, from_email = nil, from_name = nil, force_password = nil)
+  def initialize(redirection1 = nil, redirection1Email = nil, redirection2 = nil, redirection2Email = nil, redirection3 = nil, redirection3Email = nil, redirection4 = nil, redirection4Email = nil, redirection5 = nil, redirection5Email = nil, annouceMessage = nil, keepMessage = nil, audioformat = nil, fromEmail = nil, fromName = nil, forcePassword = nil)
     @redirection1 = redirection1
-    @redirection1_email = redirection1_email
+    @redirection1Email = redirection1Email
     @redirection2 = redirection2
-    @redirection2_email = redirection2_email
+    @redirection2Email = redirection2Email
     @redirection3 = redirection3
-    @redirection3_email = redirection3_email
+    @redirection3Email = redirection3Email
     @redirection4 = redirection4
-    @redirection4_email = redirection4_email
+    @redirection4Email = redirection4Email
     @redirection5 = redirection5
-    @redirection5_email = redirection5_email
-    @annouce_message = annouce_message
-    @keep_message = keep_message
+    @redirection5Email = redirection5Email
+    @annouceMessage = annouceMessage
+    @keepMessage = keepMessage
     @audioformat = audioformat
-    @from_email = from_email
-    @from_name = from_name
-    @force_password = force_password
+    @fromEmail = fromEmail
+    @fromName = fromName
+    @forcePassword = forcePassword
   end
 end
 
@@ -789,20 +789,20 @@ class TelephonyPhonebookContactStruct
   attr_accessor :id
   attr_accessor :name
   attr_accessor :surname
-  attr_accessor :work_phone
-  attr_accessor :work_mobile
-  attr_accessor :home_phone
-  attr_accessor :home_mobile
+  attr_accessor :workPhone
+  attr_accessor :workMobile
+  attr_accessor :homePhone
+  attr_accessor :homeMobile
   attr_accessor :group
 
-  def initialize(id = nil, name = nil, surname = nil, work_phone = nil, work_mobile = nil, home_phone = nil, home_mobile = nil, group = nil)
+  def initialize(id = nil, name = nil, surname = nil, workPhone = nil, workMobile = nil, homePhone = nil, homeMobile = nil, group = nil)
     @id = id
     @name = name
     @surname = surname
-    @work_phone = work_phone
-    @work_mobile = work_mobile
-    @home_phone = home_phone
-    @home_mobile = home_mobile
+    @workPhone = workPhone
+    @workMobile = workMobile
+    @homePhone = homePhone
+    @homeMobile = homeMobile
     @group = group
   end
 end
@@ -832,30 +832,30 @@ class TelephonySecurityDepositCreditReturn
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["orderId", ["SOAP::SOAPInt", XSD::QName.new(nil, "orderId")]], ["orderPassword", ["SOAP::SOAPString", XSD::QName.new(nil, "orderPassword")]], ["orderUrl", ["SOAP::SOAPString", XSD::QName.new(nil, "orderUrl")]], ["totalPrice", ["SOAP::SOAPFloat", XSD::QName.new(nil, "totalPrice")]], ["vat", ["SOAP::SOAPFloat", XSD::QName.new(nil, "vat")]], ["totalPriceWithVat", ["SOAP::SOAPFloat", XSD::QName.new(nil, "totalPriceWithVat")]], ["ribBankCode", ["SOAP::SOAPString", XSD::QName.new(nil, "ribBankCode")]], ["ribAgencyCode", ["SOAP::SOAPString", XSD::QName.new(nil, "ribAgencyCode")]], ["ribAccountNumber", ["SOAP::SOAPString", XSD::QName.new(nil, "ribAccountNumber")]], ["ribKey", ["SOAP::SOAPString", XSD::QName.new(nil, "ribKey")]], ["iban", ["SOAP::SOAPString", XSD::QName.new(nil, "iban")]], ["bic", ["SOAP::SOAPString", XSD::QName.new(nil, "bic")]]]
 
-  attr_accessor :order_id
-  attr_accessor :order_password
-  attr_accessor :order_url
-  attr_accessor :total_price
+  attr_accessor :orderId
+  attr_accessor :orderPassword
+  attr_accessor :orderUrl
+  attr_accessor :totalPrice
   attr_accessor :vat
-  attr_accessor :total_price_with_vat
-  attr_accessor :rib_bank_code
-  attr_accessor :rib_agency_code
-  attr_accessor :rib_account_number
-  attr_accessor :rib_key
+  attr_accessor :totalPriceWithVat
+  attr_accessor :ribBankCode
+  attr_accessor :ribAgencyCode
+  attr_accessor :ribAccountNumber
+  attr_accessor :ribKey
   attr_accessor :iban
   attr_accessor :bic
 
-  def initialize(order_id = nil, order_password = nil, order_url = nil, total_price = nil, vat = nil, total_price_with_vat = nil, rib_bank_code = nil, rib_agency_code = nil, rib_account_number = nil, rib_key = nil, iban = nil, bic = nil)
-    @order_id = order_id
-    @order_password = order_password
-    @order_url = order_url
-    @total_price = total_price
+  def initialize(orderId = nil, orderPassword = nil, orderUrl = nil, totalPrice = nil, vat = nil, totalPriceWithVat = nil, ribBankCode = nil, ribAgencyCode = nil, ribAccountNumber = nil, ribKey = nil, iban = nil, bic = nil)
+    @orderId = orderId
+    @orderPassword = orderPassword
+    @orderUrl = orderUrl
+    @totalPrice = totalPrice
     @vat = vat
-    @total_price_with_vat = total_price_with_vat
-    @rib_bank_code = rib_bank_code
-    @rib_agency_code = rib_agency_code
-    @rib_account_number = rib_account_number
-    @rib_key = rib_key
+    @totalPriceWithVat = totalPriceWithVat
+    @ribBankCode = ribBankCode
+    @ribAgencyCode = ribAgencyCode
+    @ribAccountNumber = ribAccountNumber
+    @ribKey = ribKey
     @iban = iban
     @bic = bic
   end
@@ -868,41 +868,41 @@ class TelephonyConferenceStruct
   @@schema_element = [["room", ["SOAP::SOAPString", XSD::QName.new(nil, "room")]], ["countryCode", ["SOAP::SOAPString", XSD::QName.new(nil, "countryCode")]], ["callNumber", ["SOAP::SOAPString", XSD::QName.new(nil, "callNumber")]], ["language", ["SOAP::SOAPString", XSD::QName.new(nil, "language")]], ["customAnnounce", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "customAnnounce")]], ["recordAnnounce", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "recordAnnounce")]], ["mailReport", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "mailReport")]], ["customMailReportAddress", ["SOAP::SOAPString", XSD::QName.new(nil, "customMailReportAddress")]], ["askName", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "askName")]], ["tellMemberCount", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "tellMemberCount")]], ["moderatorCountryCode", ["SOAP::SOAPString", XSD::QName.new(nil, "moderatorCountryCode")]], ["moderatorCallNumber", ["SOAP::SOAPString", XSD::QName.new(nil, "moderatorCallNumber")]], ["status", ["SOAP::SOAPString", XSD::QName.new(nil, "status")]], ["dtmfmenu", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "dtmfmenu")]], ["announce_rcv", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "announce_rcv")]], ["announce_snd", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "announce_snd")]], ["recordConf", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "recordConf")]]]
 
   attr_accessor :room
-  attr_accessor :country_code
-  attr_accessor :call_number
+  attr_accessor :countryCode
+  attr_accessor :callNumber
   attr_accessor :language
-  attr_accessor :custom_announce
-  attr_accessor :record_announce
-  attr_accessor :mail_report
-  attr_accessor :custom_mail_report_address
-  attr_accessor :ask_name
-  attr_accessor :tell_member_count
-  attr_accessor :moderator_country_code
-  attr_accessor :moderator_call_number
+  attr_accessor :customAnnounce
+  attr_accessor :recordAnnounce
+  attr_accessor :mailReport
+  attr_accessor :customMailReportAddress
+  attr_accessor :askName
+  attr_accessor :tellMemberCount
+  attr_accessor :moderatorCountryCode
+  attr_accessor :moderatorCallNumber
   attr_accessor :status
   attr_accessor :dtmfmenu
   attr_accessor :announce_rcv
   attr_accessor :announce_snd
-  attr_accessor :record_conf
+  attr_accessor :recordConf
 
-  def initialize(room = nil, country_code = nil, call_number = nil, language = nil, custom_announce = nil, record_announce = nil, mail_report = nil, custom_mail_report_address = nil, ask_name = nil, tell_member_count = nil, moderator_country_code = nil, moderator_call_number = nil, status = nil, dtmfmenu = nil, announce_rcv = nil, announce_snd = nil, record_conf = nil)
+  def initialize(room = nil, countryCode = nil, callNumber = nil, language = nil, customAnnounce = nil, recordAnnounce = nil, mailReport = nil, customMailReportAddress = nil, askName = nil, tellMemberCount = nil, moderatorCountryCode = nil, moderatorCallNumber = nil, status = nil, dtmfmenu = nil, announce_rcv = nil, announce_snd = nil, recordConf = nil)
     @room = room
-    @country_code = country_code
-    @call_number = call_number
+    @countryCode = countryCode
+    @callNumber = callNumber
     @language = language
-    @custom_announce = custom_announce
-    @record_announce = record_announce
-    @mail_report = mail_report
-    @custom_mail_report_address = custom_mail_report_address
-    @ask_name = ask_name
-    @tell_member_count = tell_member_count
-    @moderator_country_code = moderator_country_code
-    @moderator_call_number = moderator_call_number
+    @customAnnounce = customAnnounce
+    @recordAnnounce = recordAnnounce
+    @mailReport = mailReport
+    @customMailReportAddress = customMailReportAddress
+    @askName = askName
+    @tellMemberCount = tellMemberCount
+    @moderatorCountryCode = moderatorCountryCode
+    @moderatorCallNumber = moderatorCallNumber
     @status = status
     @dtmfmenu = dtmfmenu
     @announce_rcv = announce_rcv
     @announce_snd = announce_snd
-    @record_conf = record_conf
+    @recordConf = recordConf
   end
 end
 
@@ -953,19 +953,19 @@ class TelephonySmsHistoryStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["smsId", ["SOAP::SOAPInt", XSD::QName.new(nil, "smsId")]], ["numberFrom", ["SOAP::SOAPString", XSD::QName.new(nil, "numberFrom")]], ["numberTo", ["SOAP::SOAPString", XSD::QName.new(nil, "numberTo")]], ["status", ["SOAP::SOAPString", XSD::QName.new(nil, "status")]], ["date", ["SOAP::SOAPString", XSD::QName.new(nil, "date")]], ["message", ["SOAP::SOAPString", XSD::QName.new(nil, "message")]], ["text", ["SOAP::SOAPString", XSD::QName.new(nil, "text")]], ["user", ["SOAP::SOAPString", XSD::QName.new(nil, "user")]]]
 
-  attr_accessor :sms_id
-  attr_accessor :number_from
-  attr_accessor :number_to
+  attr_accessor :smsId
+  attr_accessor :numberFrom
+  attr_accessor :numberTo
   attr_accessor :status
   attr_accessor :date
   attr_accessor :message
   attr_accessor :text
   attr_accessor :user
 
-  def initialize(sms_id = nil, number_from = nil, number_to = nil, status = nil, date = nil, message = nil, text = nil, user = nil)
-    @sms_id = sms_id
-    @number_from = number_from
-    @number_to = number_to
+  def initialize(smsId = nil, numberFrom = nil, numberTo = nil, status = nil, date = nil, message = nil, text = nil, user = nil)
+    @smsId = smsId
+    @numberFrom = numberFrom
+    @numberTo = numberTo
     @status = status
     @date = date
     @message = message
@@ -997,14 +997,14 @@ class TelephonyAbbreviatedNumberStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["abbreviatedNumber", ["SOAP::SOAPString", XSD::QName.new(nil, "abbreviatedNumber")]], ["relatedNumber", ["SOAP::SOAPString", XSD::QName.new(nil, "relatedNumber")]], ["name", ["SOAP::SOAPString", XSD::QName.new(nil, "name")]], ["surname", ["SOAP::SOAPString", XSD::QName.new(nil, "surname")]]]
 
-  attr_accessor :abbreviated_number
-  attr_accessor :related_number
+  attr_accessor :abbreviatedNumber
+  attr_accessor :relatedNumber
   attr_accessor :name
   attr_accessor :surname
 
-  def initialize(abbreviated_number = nil, related_number = nil, name = nil, surname = nil)
-    @abbreviated_number = abbreviated_number
-    @related_number = related_number
+  def initialize(abbreviatedNumber = nil, relatedNumber = nil, name = nil, surname = nil)
+    @abbreviatedNumber = abbreviatedNumber
+    @relatedNumber = relatedNumber
     @name = name
     @surname = surname
   end
@@ -1016,12 +1016,12 @@ class TelephonyDirectoryPJHeadingStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["codePJ", ["SOAP::SOAPString", XSD::QName.new(nil, "codePJ")]], ["labelPJ", ["SOAP::SOAPString", XSD::QName.new(nil, "labelPJ")]]]
 
-  attr_accessor :code_pj
-  attr_accessor :label_pj
+  attr_accessor :codePJ
+  attr_accessor :labelPJ
 
-  def initialize(code_pj = nil, label_pj = nil)
-    @code_pj = code_pj
-    @label_pj = label_pj
+  def initialize(codePJ = nil, labelPJ = nil)
+    @codePJ = codePJ
+    @labelPJ = labelPJ
   end
 end
 
@@ -1033,48 +1033,48 @@ class TelephonyDirectoryInfoReturn
 
   attr_accessor :number
   attr_accessor :name
-  attr_accessor :first_name
+  attr_accessor :firstName
   attr_accessor :address
-  attr_accessor :way_number
-  attr_accessor :way_type
-  attr_accessor :way_name
+  attr_accessor :wayNumber
+  attr_accessor :wayType
+  attr_accessor :wayName
   attr_accessor :building
   attr_accessor :floor
-  attr_accessor :stair_case
+  attr_accessor :stairCase
   attr_accessor :door
   attr_accessor :block
   attr_accessor :lodge
-  attr_accessor :place_name
-  attr_accessor :urban_district
+  attr_accessor :placeName
+  attr_accessor :urbanDistrict
   attr_accessor :district
-  attr_accessor :extra_address
-  attr_accessor :post_box
+  attr_accessor :extraAddress
+  attr_accessor :postBox
   attr_accessor :cedex
-  attr_accessor :post_code
+  attr_accessor :postCode
   attr_accessor :city
   attr_accessor :country
   attr_accessor :email
-  attr_accessor :legal_form
+  attr_accessor :legalForm
   attr_accessor :occupation
-  attr_accessor :social_nomination
-  attr_accessor :social_nomination_extra
-  attr_accessor :line_description
+  attr_accessor :socialNomination
+  attr_accessor :socialNominationExtra
+  attr_accessor :lineDescription
   attr_accessor :siret
   attr_accessor :ape
-  attr_accessor :display_first_name
-  attr_accessor :display_only_city
-  attr_accessor :display_universal_directory
-  attr_accessor :display_marketing_directory
-  attr_accessor :display_search_reverse
-  attr_accessor :receive_pj_directory
-  attr_accessor :insee_code
+  attr_accessor :displayFirstName
+  attr_accessor :displayOnlyCity
+  attr_accessor :displayUniversalDirectory
+  attr_accessor :displayMarketingDirectory
+  attr_accessor :displaySearchReverse
+  attr_accessor :receivePJDirectory
+  attr_accessor :inseeCode
 
   def PJSocialNomination
     @pJSocialNomination
   end
 
   def PJSocialNomination=(value)
-    @p_j_social_nomination = p_j_social_nomination
+    @pJSocialNomination = value
   end
 
   def PJHeading
@@ -1082,49 +1082,49 @@ class TelephonyDirectoryInfoReturn
   end
 
   def PJHeading=(value)
-    @p_j_heading = p_j_heading
+    @pJHeading = value
   end
 
-  def initialize(number = nil, name = nil, first_name = nil, address = nil, way_number = nil, way_type = nil, way_name = nil, building = nil, floor = nil, stair_case = nil, door = nil, block = nil, lodge = nil, place_name = nil, urban_district = nil, district = nil, extra_address = nil, post_box = nil, cedex = nil, post_code = nil, city = nil, country = nil, email = nil, legal_form = nil, occupation = nil, social_nomination = nil, p_j_social_nomination = nil, social_nomination_extra = nil, line_description = nil, siret = nil, ape = nil, display_first_name = nil, display_only_city = nil, display_universal_directory = nil, display_marketing_directory = nil, display_search_reverse = nil, receive_pj_directory = nil, insee_code = nil, p_j_heading = nil)
+  def initialize(number = nil, name = nil, firstName = nil, address = nil, wayNumber = nil, wayType = nil, wayName = nil, building = nil, floor = nil, stairCase = nil, door = nil, block = nil, lodge = nil, placeName = nil, urbanDistrict = nil, district = nil, extraAddress = nil, postBox = nil, cedex = nil, postCode = nil, city = nil, country = nil, email = nil, legalForm = nil, occupation = nil, socialNomination = nil, pJSocialNomination = nil, socialNominationExtra = nil, lineDescription = nil, siret = nil, ape = nil, displayFirstName = nil, displayOnlyCity = nil, displayUniversalDirectory = nil, displayMarketingDirectory = nil, displaySearchReverse = nil, receivePJDirectory = nil, inseeCode = nil, pJHeading = nil)
     @number = number
     @name = name
-    @first_name = first_name
+    @firstName = firstName
     @address = address
-    @way_number = way_number
-    @way_type = way_type
-    @way_name = way_name
+    @wayNumber = wayNumber
+    @wayType = wayType
+    @wayName = wayName
     @building = building
     @floor = floor
-    @stair_case = stair_case
+    @stairCase = stairCase
     @door = door
     @block = block
     @lodge = lodge
-    @place_name = place_name
-    @urban_district = urban_district
+    @placeName = placeName
+    @urbanDistrict = urbanDistrict
     @district = district
-    @extra_address = extra_address
-    @post_box = post_box
+    @extraAddress = extraAddress
+    @postBox = postBox
     @cedex = cedex
-    @post_code = post_code
+    @postCode = postCode
     @city = city
     @country = country
     @email = email
-    @legal_form = legal_form
+    @legalForm = legalForm
     @occupation = occupation
-    @social_nomination = social_nomination
-    @p_j_social_nomination = p_j_social_nomination
-    @social_nomination_extra = social_nomination_extra
-    @line_description = line_description
+    @socialNomination = socialNomination
+    @pJSocialNomination = pJSocialNomination
+    @socialNominationExtra = socialNominationExtra
+    @lineDescription = lineDescription
     @siret = siret
     @ape = ape
-    @display_first_name = display_first_name
-    @display_only_city = display_only_city
-    @display_universal_directory = display_universal_directory
-    @display_marketing_directory = display_marketing_directory
-    @display_search_reverse = display_search_reverse
-    @receive_pj_directory = receive_pj_directory
-    @insee_code = insee_code
-    @p_j_heading = p_j_heading
+    @displayFirstName = displayFirstName
+    @displayOnlyCity = displayOnlyCity
+    @displayUniversalDirectory = displayUniversalDirectory
+    @displayMarketingDirectory = displayMarketingDirectory
+    @displaySearchReverse = displaySearchReverse
+    @receivePJDirectory = receivePJDirectory
+    @inseeCode = inseeCode
+    @pJHeading = pJHeading
   end
 end
 
@@ -1134,14 +1134,14 @@ class TelephonyFunctionKeyStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["keyNum", ["SOAP::SOAPInt", XSD::QName.new(nil, "keyNum")]], ["function", ["SOAP::SOAPString", XSD::QName.new(nil, "function")]], ["relatedNumber", ["SOAP::SOAPString", XSD::QName.new(nil, "relatedNumber")]]]
 
-  attr_accessor :key_num
+  attr_accessor :keyNum
   attr_accessor :function
-  attr_accessor :related_number
+  attr_accessor :relatedNumber
 
-  def initialize(key_num = nil, function = nil, related_number = nil)
-    @key_num = key_num
+  def initialize(keyNum = nil, function = nil, relatedNumber = nil)
+    @keyNum = keyNum
     @function = function
-    @related_number = related_number
+    @relatedNumber = relatedNumber
   end
 end
 
@@ -1151,36 +1151,36 @@ class TelephonyFaxOptionsListReturn
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["callNumber", ["SOAP::SOAPString", XSD::QName.new(nil, "callNumber")]], ["countryCode", ["SOAP::SOAPString", XSD::QName.new(nil, "countryCode")]], ["fromName", ["SOAP::SOAPString", XSD::QName.new(nil, "fromName")]], ["fromEmail", ["SOAP::SOAPString", XSD::QName.new(nil, "fromEmail")]], ["faxQuality", ["SOAP::SOAPString", XSD::QName.new(nil, "faxQuality")]], ["faxTagLine", ["SOAP::SOAPString", XSD::QName.new(nil, "faxTagLine")]], ["faxMaxCall", ["SOAP::SOAPInt", XSD::QName.new(nil, "faxMaxCall")]], ["receivId", ["SOAP::SOAPString", XSD::QName.new(nil, "receivId")]], ["senderId", ["SOAP::SOAPString", XSD::QName.new(nil, "senderId")]], ["redirection1Email", ["SOAP::SOAPString", XSD::QName.new(nil, "redirection1Email")]], ["redirection2Email", ["SOAP::SOAPString", XSD::QName.new(nil, "redirection2Email")]], ["redirection3Email", ["SOAP::SOAPString", XSD::QName.new(nil, "redirection3Email")]], ["redirection4Email", ["SOAP::SOAPString", XSD::QName.new(nil, "redirection4Email")]], ["redirection5Email", ["SOAP::SOAPString", XSD::QName.new(nil, "redirection5Email")]]]
 
-  attr_accessor :call_number
-  attr_accessor :country_code
-  attr_accessor :from_name
-  attr_accessor :from_email
-  attr_accessor :fax_quality
-  attr_accessor :fax_tag_line
-  attr_accessor :fax_max_call
-  attr_accessor :receiv_id
-  attr_accessor :sender_id
-  attr_accessor :redirection1_email
-  attr_accessor :redirection2_email
-  attr_accessor :redirection3_email
-  attr_accessor :redirection4_email
-  attr_accessor :redirection5_email
+  attr_accessor :callNumber
+  attr_accessor :countryCode
+  attr_accessor :fromName
+  attr_accessor :fromEmail
+  attr_accessor :faxQuality
+  attr_accessor :faxTagLine
+  attr_accessor :faxMaxCall
+  attr_accessor :receivId
+  attr_accessor :senderId
+  attr_accessor :redirection1Email
+  attr_accessor :redirection2Email
+  attr_accessor :redirection3Email
+  attr_accessor :redirection4Email
+  attr_accessor :redirection5Email
 
-  def initialize(call_number = nil, country_code = nil, from_name = nil, from_email = nil, fax_quality = nil, fax_tag_line = nil, fax_max_call = nil, receiv_id = nil, sender_id = nil, redirection1_email = nil, redirection2_email = nil, redirection3_email = nil, redirection4_email = nil, redirection5_email = nil)
-    @call_number = call_number
-    @country_code = country_code
-    @from_name = from_name
-    @from_email = from_email
-    @fax_quality = fax_quality
-    @fax_tag_line = fax_tag_line
-    @fax_max_call = fax_max_call
-    @receiv_id = receiv_id
-    @sender_id = sender_id
-    @redirection1_email = redirection1_email
-    @redirection2_email = redirection2_email
-    @redirection3_email = redirection3_email
-    @redirection4_email = redirection4_email
-    @redirection5_email = redirection5_email
+  def initialize(callNumber = nil, countryCode = nil, fromName = nil, fromEmail = nil, faxQuality = nil, faxTagLine = nil, faxMaxCall = nil, receivId = nil, senderId = nil, redirection1Email = nil, redirection2Email = nil, redirection3Email = nil, redirection4Email = nil, redirection5Email = nil)
+    @callNumber = callNumber
+    @countryCode = countryCode
+    @fromName = fromName
+    @fromEmail = fromEmail
+    @faxQuality = faxQuality
+    @faxTagLine = faxTagLine
+    @faxMaxCall = faxMaxCall
+    @receivId = receivId
+    @senderId = senderId
+    @redirection1Email = redirection1Email
+    @redirection2Email = redirection2Email
+    @redirection3Email = redirection3Email
+    @redirection4Email = redirection4Email
+    @redirection5Email = redirection5Email
   end
 end
 
@@ -1191,25 +1191,25 @@ class TelephonyFaxHistoryStruct
   @@schema_element = [["id", ["SOAP::SOAPInt", XSD::QName.new(nil, "id")]], ["relatedNumber", ["SOAP::SOAPString", XSD::QName.new(nil, "relatedNumber")]], ["jobid", ["SOAP::SOAPInt", XSD::QName.new(nil, "jobid")]], ["jobtag", ["SOAP::SOAPString", XSD::QName.new(nil, "jobtag")]], ["sender", ["SOAP::SOAPString", XSD::QName.new(nil, "sender")]], ["pages", ["SOAP::SOAPInt", XSD::QName.new(nil, "pages")]], ["quality", ["SOAP::SOAPString", XSD::QName.new(nil, "quality")]], ["callTime", ["SOAP::SOAPString", XSD::QName.new(nil, "callTime")]], ["date", ["SOAP::SOAPString", XSD::QName.new(nil, "date")]], ["state", ["SOAP::SOAPString", XSD::QName.new(nil, "state")]]]
 
   attr_accessor :id
-  attr_accessor :related_number
+  attr_accessor :relatedNumber
   attr_accessor :jobid
   attr_accessor :jobtag
   attr_accessor :sender
   attr_accessor :pages
   attr_accessor :quality
-  attr_accessor :call_time
+  attr_accessor :callTime
   attr_accessor :date
   attr_accessor :state
 
-  def initialize(id = nil, related_number = nil, jobid = nil, jobtag = nil, sender = nil, pages = nil, quality = nil, call_time = nil, date = nil, state = nil)
+  def initialize(id = nil, relatedNumber = nil, jobid = nil, jobtag = nil, sender = nil, pages = nil, quality = nil, callTime = nil, date = nil, state = nil)
     @id = id
-    @related_number = related_number
+    @relatedNumber = relatedNumber
     @jobid = jobid
     @jobtag = jobtag
     @sender = sender
     @pages = pages
     @quality = quality
-    @call_time = call_time
+    @callTime = callTime
     @date = date
     @state = state
   end
@@ -1224,27 +1224,27 @@ class TelephonyPortabilityStruct
   attr_accessor :id
   attr_accessor :number
   attr_accessor :name
-  attr_accessor :plan_date
-  attr_accessor :billing_account
+  attr_accessor :planDate
+  attr_accessor :billingAccount
   attr_accessor :type
   attr_accessor :operator
   attr_accessor :status
   attr_accessor :reason
-  attr_accessor :asking_customer
-  attr_accessor :extra_numbers
+  attr_accessor :askingCustomer
+  attr_accessor :extraNumbers
 
-  def initialize(id = nil, number = nil, name = nil, plan_date = nil, billing_account = nil, type = nil, operator = nil, status = nil, reason = nil, asking_customer = nil, extra_numbers = nil)
+  def initialize(id = nil, number = nil, name = nil, planDate = nil, billingAccount = nil, type = nil, operator = nil, status = nil, reason = nil, askingCustomer = nil, extraNumbers = nil)
     @id = id
     @number = number
     @name = name
-    @plan_date = plan_date
-    @billing_account = billing_account
+    @planDate = planDate
+    @billingAccount = billingAccount
     @type = type
     @operator = operator
     @status = status
     @reason = reason
-    @asking_customer = asking_customer
-    @extra_numbers = extra_numbers
+    @askingCustomer = askingCustomer
+    @extraNumbers = extraNumbers
   end
 end
 
@@ -1254,16 +1254,16 @@ class TelephonyNumberOrderReturn
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["orderId", ["SOAP::SOAPInt", XSD::QName.new(nil, "orderId")]], ["orderPassword", ["SOAP::SOAPString", XSD::QName.new(nil, "orderPassword")]], ["orderUrl", ["SOAP::SOAPString", XSD::QName.new(nil, "orderUrl")]], ["totalPrice", ["SOAP::SOAPFloat", XSD::QName.new(nil, "totalPrice")]]]
 
-  attr_accessor :order_id
-  attr_accessor :order_password
-  attr_accessor :order_url
-  attr_accessor :total_price
+  attr_accessor :orderId
+  attr_accessor :orderPassword
+  attr_accessor :orderUrl
+  attr_accessor :totalPrice
 
-  def initialize(order_id = nil, order_password = nil, order_url = nil, total_price = nil)
-    @order_id = order_id
-    @order_password = order_password
-    @order_url = order_url
-    @total_price = total_price
+  def initialize(orderId = nil, orderPassword = nil, orderUrl = nil, totalPrice = nil)
+    @orderId = orderId
+    @orderPassword = orderPassword
+    @orderUrl = orderUrl
+    @totalPrice = totalPrice
   end
 end
 
@@ -1289,11 +1289,11 @@ class TelephonyNumberCityForZoneStruct
   @@schema_element = [["city", ["SOAP::SOAPString", XSD::QName.new(nil, "city")]], ["postalCode", ["SOAP::SOAPString", XSD::QName.new(nil, "postalCode")]]]
 
   attr_accessor :city
-  attr_accessor :postal_code
+  attr_accessor :postalCode
 
-  def initialize(city = nil, postal_code = nil)
+  def initialize(city = nil, postalCode = nil)
     @city = city
-    @postal_code = postal_code
+    @postalCode = postalCode
   end
 end
 
@@ -1303,16 +1303,16 @@ class TelephonyTonesOptionsListReturn
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["toneRingback", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "toneRingback")]], ["toneOnHold", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "toneOnHold")]], ["toneOnClosure", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "toneOnClosure")]], ["toneOnCallWaiting", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "toneOnCallWaiting")]]]
 
-  attr_accessor :tone_ringback
-  attr_accessor :tone_on_hold
-  attr_accessor :tone_on_closure
-  attr_accessor :tone_on_call_waiting
+  attr_accessor :toneRingback
+  attr_accessor :toneOnHold
+  attr_accessor :toneOnClosure
+  attr_accessor :toneOnCallWaiting
 
-  def initialize(tone_ringback = nil, tone_on_hold = nil, tone_on_closure = nil, tone_on_call_waiting = nil)
-    @tone_ringback = tone_ringback
-    @tone_on_hold = tone_on_hold
-    @tone_on_closure = tone_on_closure
-    @tone_on_call_waiting = tone_on_call_waiting
+  def initialize(toneRingback = nil, toneOnHold = nil, toneOnClosure = nil, toneOnCallWaiting = nil)
+    @toneRingback = toneRingback
+    @toneOnHold = toneOnHold
+    @toneOnClosure = toneOnClosure
+    @toneOnCallWaiting = toneOnCallWaiting
   end
 end
 
@@ -1342,12 +1342,12 @@ class TelephonyDdiInfoReturn
   @@schema_element = [["number", ["SOAP::SOAPString", XSD::QName.new(nil, "number")]], ["noReplyTimer", ["SOAP::SOAPInt", XSD::QName.new(nil, "noReplyTimer")]], ["logged", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "logged")]]]
 
   attr_accessor :number
-  attr_accessor :no_reply_timer
+  attr_accessor :noReplyTimer
   attr_accessor :logged
 
-  def initialize(number = nil, no_reply_timer = nil, logged = nil)
+  def initialize(number = nil, noReplyTimer = nil, logged = nil)
     @number = number
-    @no_reply_timer = no_reply_timer
+    @noReplyTimer = noReplyTimer
     @logged = logged
   end
 end
@@ -1361,27 +1361,27 @@ class TelephonyHuntingInfoReturn
   attr_accessor :members
   attr_accessor :strategy
   attr_accessor :pattern
-  attr_accessor :on_hold_timer
-  attr_accessor :queue_size
-  attr_accessor :number_of_calls
-  attr_accessor :no_reply_timer
-  attr_accessor :main_voicemail
-  attr_accessor :tone_on_hold
-  attr_accessor :tone_ringback
-  attr_accessor :tone_on_closure
+  attr_accessor :onHoldTimer
+  attr_accessor :queueSize
+  attr_accessor :numberOfCalls
+  attr_accessor :noReplyTimer
+  attr_accessor :mainVoicemail
+  attr_accessor :toneOnHold
+  attr_accessor :toneRingback
+  attr_accessor :toneOnClosure
 
-  def initialize(members = nil, strategy = nil, pattern = nil, on_hold_timer = nil, queue_size = nil, number_of_calls = nil, no_reply_timer = nil, main_voicemail = nil, tone_on_hold = nil, tone_ringback = nil, tone_on_closure = nil)
+  def initialize(members = nil, strategy = nil, pattern = nil, onHoldTimer = nil, queueSize = nil, numberOfCalls = nil, noReplyTimer = nil, mainVoicemail = nil, toneOnHold = nil, toneRingback = nil, toneOnClosure = nil)
     @members = members
     @strategy = strategy
     @pattern = pattern
-    @on_hold_timer = on_hold_timer
-    @queue_size = queue_size
-    @number_of_calls = number_of_calls
-    @no_reply_timer = no_reply_timer
-    @main_voicemail = main_voicemail
-    @tone_on_hold = tone_on_hold
-    @tone_ringback = tone_ringback
-    @tone_on_closure = tone_on_closure
+    @onHoldTimer = onHoldTimer
+    @queueSize = queueSize
+    @numberOfCalls = numberOfCalls
+    @noReplyTimer = noReplyTimer
+    @mainVoicemail = mainVoicemail
+    @toneOnHold = toneOnHold
+    @toneRingback = toneRingback
+    @toneOnClosure = toneOnClosure
   end
 end
 
@@ -1394,13 +1394,13 @@ class TelephonyHuntingInfoMemberStruct
   attr_accessor :number
   attr_accessor :status
   attr_accessor :logged
-  attr_accessor :no_reply_timer
+  attr_accessor :noReplyTimer
 
-  def initialize(number = nil, status = nil, logged = nil, no_reply_timer = nil)
+  def initialize(number = nil, status = nil, logged = nil, noReplyTimer = nil)
     @number = number
     @status = status
     @logged = logged
-    @no_reply_timer = no_reply_timer
+    @noReplyTimer = noReplyTimer
   end
 end
 
@@ -1411,11 +1411,11 @@ class TelephonyScreenStruct
   @@schema_element = [["status", ["SOAP::SOAPString", XSD::QName.new(nil, "status")]], ["numberScreen", ["SOAP::SOAPString", XSD::QName.new(nil, "numberScreen")]]]
 
   attr_accessor :status
-  attr_accessor :number_screen
+  attr_accessor :numberScreen
 
-  def initialize(status = nil, number_screen = nil)
+  def initialize(status = nil, numberScreen = nil)
     @status = status
-    @number_screen = number_screen
+    @numberScreen = numberScreen
   end
 end
 
@@ -1425,14 +1425,14 @@ class TelephonyScreenBlackWhiteChoiceReturn
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["incomingScreenlist", ["SOAP::SOAPString", XSD::QName.new(nil, "incomingScreenlist")]], ["outgoingScreenlist", ["SOAP::SOAPString", XSD::QName.new(nil, "outgoingScreenlist")]], ["outgoingCodeUnlock", ["SOAP::SOAPString", XSD::QName.new(nil, "outgoingCodeUnlock")]]]
 
-  attr_accessor :incoming_screenlist
-  attr_accessor :outgoing_screenlist
-  attr_accessor :outgoing_code_unlock
+  attr_accessor :incomingScreenlist
+  attr_accessor :outgoingScreenlist
+  attr_accessor :outgoingCodeUnlock
 
-  def initialize(incoming_screenlist = nil, outgoing_screenlist = nil, outgoing_code_unlock = nil)
-    @incoming_screenlist = incoming_screenlist
-    @outgoing_screenlist = outgoing_screenlist
-    @outgoing_code_unlock = outgoing_code_unlock
+  def initialize(incomingScreenlist = nil, outgoingScreenlist = nil, outgoingCodeUnlock = nil)
+    @incomingScreenlist = incomingScreenlist
+    @outgoingScreenlist = outgoingScreenlist
+    @outgoingCodeUnlock = outgoingCodeUnlock
   end
 end
 
@@ -1443,15 +1443,15 @@ class TelephonyHuntingGenericScreenStruct
   @@schema_element = [["status", ["SOAP::SOAPString", XSD::QName.new(nil, "status")]], ["timeEnd", ["SOAP::SOAPString", XSD::QName.new(nil, "timeEnd")]], ["timeStart", ["SOAP::SOAPString", XSD::QName.new(nil, "timeStart")]], ["dayType", ["SOAP::SOAPString", XSD::QName.new(nil, "dayType")]]]
 
   attr_accessor :status
-  attr_accessor :time_end
-  attr_accessor :time_start
-  attr_accessor :day_type
+  attr_accessor :timeEnd
+  attr_accessor :timeStart
+  attr_accessor :dayType
 
-  def initialize(status = nil, time_end = nil, time_start = nil, day_type = nil)
+  def initialize(status = nil, timeEnd = nil, timeStart = nil, dayType = nil)
     @status = status
-    @time_end = time_end
-    @time_start = time_start
-    @day_type = day_type
+    @timeEnd = timeEnd
+    @timeStart = timeStart
+    @dayType = dayType
   end
 end
 
@@ -1461,12 +1461,12 @@ class TelephonyHuntingGenericScreenOptionsReturn
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["forwardUnconditionalNumber", ["SOAP::SOAPString", XSD::QName.new(nil, "forwardUnconditionalNumber")]], ["mainVoicemail", ["SOAP::SOAPString", XSD::QName.new(nil, "mainVoicemail")]]]
 
-  attr_accessor :forward_unconditional_number
-  attr_accessor :main_voicemail
+  attr_accessor :forwardUnconditionalNumber
+  attr_accessor :mainVoicemail
 
-  def initialize(forward_unconditional_number = nil, main_voicemail = nil)
-    @forward_unconditional_number = forward_unconditional_number
-    @main_voicemail = main_voicemail
+  def initialize(forwardUnconditionalNumber = nil, mainVoicemail = nil)
+    @forwardUnconditionalNumber = forwardUnconditionalNumber
+    @mainVoicemail = mainVoicemail
   end
 end
 
@@ -1479,16 +1479,16 @@ class TelephonyPlugAndPhoneInfoReturn
   attr_accessor :brand
   attr_accessor :protocol
   attr_accessor :mac
-  attr_accessor :gf_key_count
-  attr_accessor :pb_level
+  attr_accessor :gfKeyCount
+  attr_accessor :pbLevel
   attr_accessor :skin
 
-  def initialize(brand = nil, protocol = nil, mac = nil, gf_key_count = nil, pb_level = nil, skin = nil)
+  def initialize(brand = nil, protocol = nil, mac = nil, gfKeyCount = nil, pbLevel = nil, skin = nil)
     @brand = brand
     @protocol = protocol
     @mac = mac
-    @gf_key_count = gf_key_count
-    @pb_level = pb_level
+    @gfKeyCount = gfKeyCount
+    @pbLevel = pbLevel
     @skin = skin
   end
 end
@@ -1699,7 +1699,7 @@ class NicInfoReturn
   attr_accessor :name
   attr_accessor :firstname
   attr_accessor :email
-  attr_accessor :spare_email
+  attr_accessor :spareEmail
   attr_accessor :phone
   attr_accessor :fax
   attr_accessor :address
@@ -1710,18 +1710,18 @@ class NicInfoReturn
   attr_accessor :language
   attr_accessor :legalform
   attr_accessor :organisation
-  attr_accessor :legal_name
-  attr_accessor :legal_number
+  attr_accessor :legalName
+  attr_accessor :legalNumber
   attr_accessor :vat
-  attr_accessor :is_owner
-  attr_accessor :billing_country
+  attr_accessor :isOwner
+  attr_accessor :billingCountry
 
-  def initialize(nic = nil, name = nil, firstname = nil, email = nil, spare_email = nil, phone = nil, fax = nil, address = nil, city = nil, area = nil, zip = nil, country = nil, language = nil, legalform = nil, organisation = nil, legal_name = nil, legal_number = nil, vat = nil, is_owner = nil, billing_country = nil)
+  def initialize(nic = nil, name = nil, firstname = nil, email = nil, spareEmail = nil, phone = nil, fax = nil, address = nil, city = nil, area = nil, zip = nil, country = nil, language = nil, legalform = nil, organisation = nil, legalName = nil, legalNumber = nil, vat = nil, isOwner = nil, billingCountry = nil)
     @nic = nic
     @name = name
     @firstname = firstname
     @email = email
-    @spare_email = spare_email
+    @spareEmail = spareEmail
     @phone = phone
     @fax = fax
     @address = address
@@ -1732,11 +1732,11 @@ class NicInfoReturn
     @language = language
     @legalform = legalform
     @organisation = organisation
-    @legal_name = legal_name
-    @legal_number = legal_number
+    @legalName = legalName
+    @legalNumber = legalNumber
     @vat = vat
-    @is_owner = is_owner
-    @billing_country = billing_country
+    @isOwner = isOwner
+    @billingCountry = billingCountry
   end
 end
 
@@ -1786,19 +1786,19 @@ class RpsGetIOStatsDetailStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["serviceTime", ["RpsGetIOStatsDetailRawStruct", XSD::QName.new(nil, "serviceTime")]], ["ioRequests", ["RpsGetIOStatsDetailIoRequestsStruct", XSD::QName.new(nil, "IoRequests")]]]
 
-  attr_accessor :service_time
+  attr_accessor :serviceTime
 
   def IoRequests
     @ioRequests
   end
 
   def IoRequests=(value)
-    @io_requests = io_requests
+    @ioRequests = value
   end
 
-  def initialize(service_time = nil, io_requests = nil)
-    @service_time = service_time
-    @io_requests = io_requests
+  def initialize(serviceTime = nil, ioRequests = nil)
+    @serviceTime = serviceTime
+    @ioRequests = ioRequests
   end
 end
 
@@ -1837,25 +1837,25 @@ class RpsMigrationStatusReturn
   @@schema_element = [["id", ["SOAP::SOAPInt", XSD::QName.new(nil, "id")]], ["progressStatus", ["SOAP::SOAPInt", XSD::QName.new(nil, "progressStatus")]], ["status", ["SOAP::SOAPString", XSD::QName.new(nil, "status")]], ["logicalRpsName", ["SOAP::SOAPString", XSD::QName.new(nil, "logicalRpsName")]], ["physicalRpsTo", ["SOAP::SOAPString", XSD::QName.new(nil, "physicalRpsTo")]], ["todoDate", ["SOAP::SOAPString", XSD::QName.new(nil, "todoDate")]], ["doingDate", ["SOAP::SOAPString", XSD::QName.new(nil, "doingDate")]], ["doneDate", ["SOAP::SOAPString", XSD::QName.new(nil, "doneDate")]], ["errorMessage", ["SOAP::SOAPString", XSD::QName.new(nil, "errorMessage")]]]
 
   attr_accessor :id
-  attr_accessor :progress_status
+  attr_accessor :progressStatus
   attr_accessor :status
-  attr_accessor :logical_rps_name
-  attr_accessor :physical_rps_to
-  attr_accessor :todo_date
-  attr_accessor :doing_date
-  attr_accessor :done_date
-  attr_accessor :error_message
+  attr_accessor :logicalRpsName
+  attr_accessor :physicalRpsTo
+  attr_accessor :todoDate
+  attr_accessor :doingDate
+  attr_accessor :doneDate
+  attr_accessor :errorMessage
 
-  def initialize(id = nil, progress_status = nil, status = nil, logical_rps_name = nil, physical_rps_to = nil, todo_date = nil, doing_date = nil, done_date = nil, error_message = nil)
+  def initialize(id = nil, progressStatus = nil, status = nil, logicalRpsName = nil, physicalRpsTo = nil, todoDate = nil, doingDate = nil, doneDate = nil, errorMessage = nil)
     @id = id
-    @progress_status = progress_status
+    @progressStatus = progressStatus
     @status = status
-    @logical_rps_name = logical_rps_name
-    @physical_rps_to = physical_rps_to
-    @todo_date = todo_date
-    @doing_date = doing_date
-    @done_date = done_date
-    @error_message = error_message
+    @logicalRpsName = logicalRpsName
+    @physicalRpsTo = physicalRpsTo
+    @todoDate = todoDate
+    @doingDate = doingDate
+    @doneDate = doneDate
+    @errorMessage = errorMessage
   end
 end
 
@@ -1903,18 +1903,18 @@ class OrderStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["orderId", ["SOAP::SOAPInt", XSD::QName.new(nil, "orderId")]], ["orderPassword", ["SOAP::SOAPString", XSD::QName.new(nil, "orderPassword")]], ["orderUrl", ["SOAP::SOAPString", XSD::QName.new(nil, "orderUrl")]], ["isPaid", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "isPaid")]], ["paymentStatus", ["SOAP::SOAPString", XSD::QName.new(nil, "paymentStatus")]]]
 
-  attr_accessor :order_id
-  attr_accessor :order_password
-  attr_accessor :order_url
-  attr_accessor :is_paid
-  attr_accessor :payment_status
+  attr_accessor :orderId
+  attr_accessor :orderPassword
+  attr_accessor :orderUrl
+  attr_accessor :isPaid
+  attr_accessor :paymentStatus
 
-  def initialize(order_id = nil, order_password = nil, order_url = nil, is_paid = nil, payment_status = nil)
-    @order_id = order_id
-    @order_password = order_password
-    @order_url = order_url
-    @is_paid = is_paid
-    @payment_status = payment_status
+  def initialize(orderId = nil, orderPassword = nil, orderUrl = nil, isPaid = nil, paymentStatus = nil)
+    @orderId = orderId
+    @orderPassword = orderPassword
+    @orderUrl = orderUrl
+    @isPaid = isPaid
+    @paymentStatus = paymentStatus
   end
 end
 
@@ -1931,11 +1931,11 @@ class DedicatedNetworkInterfaceStruct
   attr_accessor :switch
   attr_accessor :icmp_drop
   attr_accessor :failover
-  attr_accessor :routed_to
+  attr_accessor :routedTo
   attr_accessor :ssl
   attr_accessor :country
 
-  def initialize(reverse = nil, ip = nil, ipv6 = nil, mac = nil, switch = nil, icmp_drop = nil, failover = nil, routed_to = nil, ssl = nil, country = nil)
+  def initialize(reverse = nil, ip = nil, ipv6 = nil, mac = nil, switch = nil, icmp_drop = nil, failover = nil, routedTo = nil, ssl = nil, country = nil)
     @reverse = reverse
     @ip = ip
     @ipv6 = ipv6
@@ -1943,7 +1943,7 @@ class DedicatedNetworkInterfaceStruct
     @switch = switch
     @icmp_drop = icmp_drop
     @failover = failover
-    @routed_to = routed_to
+    @routedTo = routedTo
     @ssl = ssl
     @country = country
   end
@@ -1962,7 +1962,7 @@ class DedicatedNetworkTrafficDetailsStruct
   end
 
   def in=(value)
-    @v_in = v_in
+    @v_in = value
   end
 
   def initialize(v_in = nil, out = nil)
@@ -1977,20 +1977,20 @@ class DedicatedNetworkTrafficStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["lastUpdate", ["SOAP::SOAPString", XSD::QName.new(nil, "lastUpdate")]], ["currentQuota", ["DedicatedNetworkTrafficDetailsStruct", XSD::QName.new(nil, "currentQuota")]], ["monthlyTraffic", ["DedicatedNetworkTrafficDetailsStruct", XSD::QName.new(nil, "monthlyTraffic")]], ["nextTrafficReset", ["SOAP::SOAPString", XSD::QName.new(nil, "nextTrafficReset")]], ["monthlyQuota", ["SOAP::SOAPString", XSD::QName.new(nil, "monthlyQuota")]], ["nextQuotaReset", ["SOAP::SOAPString", XSD::QName.new(nil, "nextQuotaReset")]]]
 
-  attr_accessor :last_update
-  attr_accessor :current_quota
-  attr_accessor :monthly_traffic
-  attr_accessor :next_traffic_reset
-  attr_accessor :monthly_quota
-  attr_accessor :next_quota_reset
+  attr_accessor :lastUpdate
+  attr_accessor :currentQuota
+  attr_accessor :monthlyTraffic
+  attr_accessor :nextTrafficReset
+  attr_accessor :monthlyQuota
+  attr_accessor :nextQuotaReset
 
-  def initialize(last_update = nil, current_quota = nil, monthly_traffic = nil, next_traffic_reset = nil, monthly_quota = nil, next_quota_reset = nil)
-    @last_update = last_update
-    @current_quota = current_quota
-    @monthly_traffic = monthly_traffic
-    @next_traffic_reset = next_traffic_reset
-    @monthly_quota = monthly_quota
-    @next_quota_reset = next_quota_reset
+  def initialize(lastUpdate = nil, currentQuota = nil, monthlyTraffic = nil, nextTrafficReset = nil, monthlyQuota = nil, nextQuotaReset = nil)
+    @lastUpdate = lastUpdate
+    @currentQuota = currentQuota
+    @monthlyTraffic = monthlyTraffic
+    @nextTrafficReset = nextTrafficReset
+    @monthlyQuota = monthlyQuota
+    @nextQuotaReset = nextQuotaReset
   end
 end
 
@@ -2004,21 +2004,21 @@ class DedicatedNetworkStruct
   attr_accessor :priority
   attr_accessor :connexion
   attr_accessor :bandwidth
-  attr_accessor :bandwidth_ovh_to_ovh
-  attr_accessor :bandwidth_ovh_to_internet
-  attr_accessor :bandwidth_internet_to_ovh
+  attr_accessor :bandwidthOvhToOvh
+  attr_accessor :bandwidthOvhToInternet
+  attr_accessor :bandwidthInternetToOvh
   attr_accessor :over
   attr_accessor :interfaces
   attr_accessor :traffic
 
-  def initialize(type = nil, priority = nil, connexion = nil, bandwidth = nil, bandwidth_ovh_to_ovh = nil, bandwidth_ovh_to_internet = nil, bandwidth_internet_to_ovh = nil, over = nil, interfaces = nil, traffic = nil)
+  def initialize(type = nil, priority = nil, connexion = nil, bandwidth = nil, bandwidthOvhToOvh = nil, bandwidthOvhToInternet = nil, bandwidthInternetToOvh = nil, over = nil, interfaces = nil, traffic = nil)
     @type = type
     @priority = priority
     @connexion = connexion
     @bandwidth = bandwidth
-    @bandwidth_ovh_to_ovh = bandwidth_ovh_to_ovh
-    @bandwidth_ovh_to_internet = bandwidth_ovh_to_internet
-    @bandwidth_internet_to_ovh = bandwidth_internet_to_ovh
+    @bandwidthOvhToOvh = bandwidthOvhToOvh
+    @bandwidthOvhToInternet = bandwidthOvhToInternet
+    @bandwidthInternetToOvh = bandwidthInternetToOvh
     @over = over
     @interfaces = interfaces
     @traffic = traffic
@@ -2031,21 +2031,21 @@ class DedicatedCapabilityStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["backupFtp", ["SOAP::SOAPInt", XSD::QName.new(nil, "backupFtp")]], ["backupFtpServer", ["SOAP::SOAPString", XSD::QName.new(nil, "backupFtpServer")]], ["allocationBlockIp", ["SOAP::SOAPInt", XSD::QName.new(nil, "allocationBlockIp")]], ["additionalIp", ["SOAP::SOAPInt", XSD::QName.new(nil, "additionalIp")]], ["rootDevice", ["SOAP::SOAPString", XSD::QName.new(nil, "rootDevice")]], ["diskSize", ["SOAP::SOAPInt", XSD::QName.new(nil, "diskSize")]], ["tuning", ["SOAP::SOAPInt", XSD::QName.new(nil, "tuning")]]]
 
-  attr_accessor :backup_ftp
-  attr_accessor :backup_ftp_server
-  attr_accessor :allocation_block_ip
-  attr_accessor :additional_ip
-  attr_accessor :root_device
-  attr_accessor :disk_size
+  attr_accessor :backupFtp
+  attr_accessor :backupFtpServer
+  attr_accessor :allocationBlockIp
+  attr_accessor :additionalIp
+  attr_accessor :rootDevice
+  attr_accessor :diskSize
   attr_accessor :tuning
 
-  def initialize(backup_ftp = nil, backup_ftp_server = nil, allocation_block_ip = nil, additional_ip = nil, root_device = nil, disk_size = nil, tuning = nil)
-    @backup_ftp = backup_ftp
-    @backup_ftp_server = backup_ftp_server
-    @allocation_block_ip = allocation_block_ip
-    @additional_ip = additional_ip
-    @root_device = root_device
-    @disk_size = disk_size
+  def initialize(backupFtp = nil, backupFtpServer = nil, allocationBlockIp = nil, additionalIp = nil, rootDevice = nil, diskSize = nil, tuning = nil)
+    @backupFtp = backupFtp
+    @backupFtpServer = backupFtpServer
+    @allocationBlockIp = allocationBlockIp
+    @additionalIp = additionalIp
+    @rootDevice = rootDevice
+    @diskSize = diskSize
     @tuning = tuning
   end
 end
@@ -2078,29 +2078,29 @@ class DedicatedInfoReturn
   attr_accessor :hostname
   attr_accessor :datacenter
   attr_accessor :os
-  attr_accessor :is_kim_sufi
-  attr_accessor :is_rps
-  attr_accessor :is_hg
+  attr_accessor :isKimSufi
+  attr_accessor :isRPS
+  attr_accessor :isHG
   attr_accessor :num
   attr_accessor :rack
-  attr_accessor :country_billing
+  attr_accessor :countryBilling
   attr_accessor :network
   attr_accessor :capability
-  attr_accessor :free_dom
+  attr_accessor :freeDom
 
-  def initialize(hostname = nil, datacenter = nil, os = nil, is_kim_sufi = nil, is_rps = nil, is_hg = nil, num = nil, rack = nil, country_billing = nil, network = nil, capability = nil, free_dom = nil)
+  def initialize(hostname = nil, datacenter = nil, os = nil, isKimSufi = nil, isRPS = nil, isHG = nil, num = nil, rack = nil, countryBilling = nil, network = nil, capability = nil, freeDom = nil)
     @hostname = hostname
     @datacenter = datacenter
     @os = os
-    @is_kim_sufi = is_kim_sufi
-    @is_rps = is_rps
-    @is_hg = is_hg
+    @isKimSufi = isKimSufi
+    @isRPS = isRPS
+    @isHG = isHG
     @num = num
     @rack = rack
-    @country_billing = country_billing
+    @countryBilling = countryBilling
     @network = network
     @capability = capability
-    @free_dom = free_dom
+    @freeDom = freeDom
   end
 end
 
@@ -2291,7 +2291,7 @@ class DedicatedMrtgInfoStruct
   end
 
   def in=(value)
-    @v_in = v_in
+    @v_in = value
   end
 
   def initialize(v_in = nil, out = nil)
@@ -2332,7 +2332,7 @@ class DedicatedHardRebootStatusReturn
   end
 
   def end=(value)
-    @v_end = v_end
+    @v_end = value
   end
 
   def initialize(start = nil, v_end = nil)
@@ -2367,13 +2367,13 @@ class DedicatedFailoverStruct
   @@schema_element = [["ip", ["SOAP::SOAPString", XSD::QName.new(nil, "ip")]], ["routedTo", ["SOAP::SOAPString", XSD::QName.new(nil, "routedTo")]], ["comment", ["SOAP::SOAPString", XSD::QName.new(nil, "comment")]], ["ssl", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "ssl")]]]
 
   attr_accessor :ip
-  attr_accessor :routed_to
+  attr_accessor :routedTo
   attr_accessor :comment
   attr_accessor :ssl
 
-  def initialize(ip = nil, routed_to = nil, comment = nil, ssl = nil)
+  def initialize(ip = nil, routedTo = nil, comment = nil, ssl = nil)
     @ip = ip
-    @routed_to = routed_to
+    @routedTo = routedTo
     @comment = comment
     @ssl = ssl
   end
@@ -2387,22 +2387,22 @@ class DedicatedFailoverRipeStruct
 
   attr_accessor :country
   attr_accessor :netname
-  attr_accessor :routed_to
-  attr_accessor :routing_status
+  attr_accessor :routedTo
+  attr_accessor :routingStatus
   attr_accessor :status
-  attr_accessor :addresses_number
-  attr_accessor :network_ip
-  attr_accessor :is_exclude
+  attr_accessor :addressesNumber
+  attr_accessor :networkIp
+  attr_accessor :isExclude
 
-  def initialize(country = nil, netname = nil, routed_to = nil, routing_status = nil, status = nil, addresses_number = nil, network_ip = nil, is_exclude = nil)
+  def initialize(country = nil, netname = nil, routedTo = nil, routingStatus = nil, status = nil, addressesNumber = nil, networkIp = nil, isExclude = nil)
     @country = country
     @netname = netname
-    @routed_to = routed_to
-    @routing_status = routing_status
+    @routedTo = routedTo
+    @routingStatus = routingStatus
     @status = status
-    @addresses_number = addresses_number
-    @network_ip = network_ip
-    @is_exclude = is_exclude
+    @addressesNumber = addressesNumber
+    @networkIp = networkIp
+    @isExclude = isExclude
   end
 end
 
@@ -2412,16 +2412,16 @@ class DedicatedFilterIrcRuleStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["fromIp", ["SOAP::SOAPString", XSD::QName.new(nil, "fromIp")]], ["fromPort", ["SOAP::SOAPString", XSD::QName.new(nil, "fromPort")]], ["toIp", ["SOAP::SOAPString", XSD::QName.new(nil, "toIp")]], ["toPort", ["SOAP::SOAPString", XSD::QName.new(nil, "toPort")]]]
 
-  attr_accessor :from_ip
-  attr_accessor :from_port
-  attr_accessor :to_ip
-  attr_accessor :to_port
+  attr_accessor :fromIp
+  attr_accessor :fromPort
+  attr_accessor :toIp
+  attr_accessor :toPort
 
-  def initialize(from_ip = nil, from_port = nil, to_ip = nil, to_port = nil)
-    @from_ip = from_ip
-    @from_port = from_port
-    @to_ip = to_ip
-    @to_port = to_port
+  def initialize(fromIp = nil, fromPort = nil, toIp = nil, toPort = nil)
+    @fromIp = fromIp
+    @fromPort = fromPort
+    @toIp = toIp
+    @toPort = toPort
   end
 end
 
@@ -2431,14 +2431,14 @@ class DedicatedBackupFtpInfoReturn
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["ftpBackupName", ["SOAP::SOAPString", XSD::QName.new(nil, "ftpBackupName")]], ["quotaUsed", ["SOAP::SOAPInt", XSD::QName.new(nil, "quotaUsed")]], ["quotaSize", ["SOAP::SOAPInt", XSD::QName.new(nil, "quotaSize")]]]
 
-  attr_accessor :ftp_backup_name
-  attr_accessor :quota_used
-  attr_accessor :quota_size
+  attr_accessor :ftpBackupName
+  attr_accessor :quotaUsed
+  attr_accessor :quotaSize
 
-  def initialize(ftp_backup_name = nil, quota_used = nil, quota_size = nil)
-    @ftp_backup_name = ftp_backup_name
-    @quota_used = quota_used
-    @quota_size = quota_size
+  def initialize(ftpBackupName = nil, quotaUsed = nil, quotaSize = nil)
+    @ftpBackupName = ftpBackupName
+    @quotaUsed = quotaUsed
+    @quotaSize = quotaSize
   end
 end
 
@@ -2448,42 +2448,42 @@ class DedicatedBackupListStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["backupId", ["SOAP::SOAPInt", XSD::QName.new(nil, "backupId")]], ["backupFeature", ["SOAP::SOAPString", XSD::QName.new(nil, "backupFeature")]], ["enable", ["SOAP::SOAPInt", XSD::QName.new(nil, "enable")]], ["language", ["SOAP::SOAPString", XSD::QName.new(nil, "language")]], ["backupSize", ["SOAP::SOAPString", XSD::QName.new(nil, "backupSize")]], ["sshPort", ["SOAP::SOAPInt", XSD::QName.new(nil, "sshPort")]], ["percentUsed", ["SOAP::SOAPString", XSD::QName.new(nil, "percentUsed")]], ["hostname", ["SOAP::SOAPString", XSD::QName.new(nil, "hostname")]], ["backupName", ["SOAP::SOAPString", XSD::QName.new(nil, "backupName")]], ["email", ["SOAP::SOAPString", XSD::QName.new(nil, "email")]], ["snapshotNumber", ["SOAP::SOAPInt", XSD::QName.new(nil, "snapshotNumber")]], ["superBackupName", ["SOAP::SOAPString", XSD::QName.new(nil, "superBackupName")]], ["backupType", ["SOAP::SOAPString", XSD::QName.new(nil, "backupType")]], ["src", ["MyArrayOfStringType", XSD::QName.new(nil, "src")]], ["include", ["MyArrayOfStringType", XSD::QName.new(nil, "include")]], ["exclude", ["MyArrayOfStringType", XSD::QName.new(nil, "exclude")]], ["excludeHard", ["MyArrayOfStringType", XSD::QName.new(nil, "excludeHard")]]]
 
-  attr_accessor :backup_id
-  attr_accessor :backup_feature
+  attr_accessor :backupId
+  attr_accessor :backupFeature
   attr_accessor :enable
   attr_accessor :language
-  attr_accessor :backup_size
-  attr_accessor :ssh_port
-  attr_accessor :percent_used
+  attr_accessor :backupSize
+  attr_accessor :sshPort
+  attr_accessor :percentUsed
   attr_accessor :hostname
-  attr_accessor :backup_name
+  attr_accessor :backupName
   attr_accessor :email
-  attr_accessor :snapshot_number
-  attr_accessor :super_backup_name
-  attr_accessor :backup_type
+  attr_accessor :snapshotNumber
+  attr_accessor :superBackupName
+  attr_accessor :backupType
   attr_accessor :src
   attr_accessor :include
   attr_accessor :exclude
-  attr_accessor :exclude_hard
+  attr_accessor :excludeHard
 
-  def initialize(backup_id = nil, backup_feature = nil, enable = nil, language = nil, backup_size = nil, ssh_port = nil, percent_used = nil, hostname = nil, backup_name = nil, email = nil, snapshot_number = nil, super_backup_name = nil, backup_type = nil, src = nil, include = nil, exclude = nil, exclude_hard = nil)
-    @backup_id = backup_id
-    @backup_feature = backup_feature
+  def initialize(backupId = nil, backupFeature = nil, enable = nil, language = nil, backupSize = nil, sshPort = nil, percentUsed = nil, hostname = nil, backupName = nil, email = nil, snapshotNumber = nil, superBackupName = nil, backupType = nil, src = nil, include = nil, exclude = nil, excludeHard = nil)
+    @backupId = backupId
+    @backupFeature = backupFeature
     @enable = enable
     @language = language
-    @backup_size = backup_size
-    @ssh_port = ssh_port
-    @percent_used = percent_used
+    @backupSize = backupSize
+    @sshPort = sshPort
+    @percentUsed = percentUsed
     @hostname = hostname
-    @backup_name = backup_name
+    @backupName = backupName
     @email = email
-    @snapshot_number = snapshot_number
-    @super_backup_name = super_backup_name
-    @backup_type = backup_type
+    @snapshotNumber = snapshotNumber
+    @superBackupName = superBackupName
+    @backupType = backupType
     @src = src
     @include = include
     @exclude = exclude
-    @exclude_hard = exclude_hard
+    @excludeHard = excludeHard
   end
 end
 
@@ -2493,42 +2493,42 @@ class DedicatedBackupListReturn
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["backupId", ["SOAP::SOAPInt", XSD::QName.new(nil, "backupId")]], ["backupFeature", ["SOAP::SOAPString", XSD::QName.new(nil, "backupFeature")]], ["enable", ["SOAP::SOAPInt", XSD::QName.new(nil, "enable")]], ["language", ["SOAP::SOAPString", XSD::QName.new(nil, "language")]], ["backupSize", ["SOAP::SOAPString", XSD::QName.new(nil, "backupSize")]], ["sshPort", ["SOAP::SOAPInt", XSD::QName.new(nil, "sshPort")]], ["percentUsed", ["SOAP::SOAPString", XSD::QName.new(nil, "percentUsed")]], ["hostname", ["SOAP::SOAPString", XSD::QName.new(nil, "hostname")]], ["backupName", ["SOAP::SOAPString", XSD::QName.new(nil, "backupName")]], ["email", ["SOAP::SOAPString", XSD::QName.new(nil, "email")]], ["snapshotNumber", ["SOAP::SOAPInt", XSD::QName.new(nil, "snapshotNumber")]], ["superBackupName", ["SOAP::SOAPString", XSD::QName.new(nil, "superBackupName")]], ["backupType", ["SOAP::SOAPString", XSD::QName.new(nil, "backupType")]], ["src", ["MyArrayOfStringType", XSD::QName.new(nil, "src")]], ["include", ["MyArrayOfStringType", XSD::QName.new(nil, "include")]], ["exclude", ["MyArrayOfStringType", XSD::QName.new(nil, "exclude")]], ["excludeHard", ["MyArrayOfStringType", XSD::QName.new(nil, "excludeHard")]]]
 
-  attr_accessor :backup_id
-  attr_accessor :backup_feature
+  attr_accessor :backupId
+  attr_accessor :backupFeature
   attr_accessor :enable
   attr_accessor :language
-  attr_accessor :backup_size
-  attr_accessor :ssh_port
-  attr_accessor :percent_used
+  attr_accessor :backupSize
+  attr_accessor :sshPort
+  attr_accessor :percentUsed
   attr_accessor :hostname
-  attr_accessor :backup_name
+  attr_accessor :backupName
   attr_accessor :email
-  attr_accessor :snapshot_number
-  attr_accessor :super_backup_name
-  attr_accessor :backup_type
+  attr_accessor :snapshotNumber
+  attr_accessor :superBackupName
+  attr_accessor :backupType
   attr_accessor :src
   attr_accessor :include
   attr_accessor :exclude
-  attr_accessor :exclude_hard
+  attr_accessor :excludeHard
 
-  def initialize(backup_id = nil, backup_feature = nil, enable = nil, language = nil, backup_size = nil, ssh_port = nil, percent_used = nil, hostname = nil, backup_name = nil, email = nil, snapshot_number = nil, super_backup_name = nil, backup_type = nil, src = nil, include = nil, exclude = nil, exclude_hard = nil)
-    @backup_id = backup_id
-    @backup_feature = backup_feature
+  def initialize(backupId = nil, backupFeature = nil, enable = nil, language = nil, backupSize = nil, sshPort = nil, percentUsed = nil, hostname = nil, backupName = nil, email = nil, snapshotNumber = nil, superBackupName = nil, backupType = nil, src = nil, include = nil, exclude = nil, excludeHard = nil)
+    @backupId = backupId
+    @backupFeature = backupFeature
     @enable = enable
     @language = language
-    @backup_size = backup_size
-    @ssh_port = ssh_port
-    @percent_used = percent_used
+    @backupSize = backupSize
+    @sshPort = sshPort
+    @percentUsed = percentUsed
     @hostname = hostname
-    @backup_name = backup_name
+    @backupName = backupName
     @email = email
-    @snapshot_number = snapshot_number
-    @super_backup_name = super_backup_name
-    @backup_type = backup_type
+    @snapshotNumber = snapshotNumber
+    @superBackupName = superBackupName
+    @backupType = backupType
     @src = src
     @include = include
     @exclude = exclude
-    @exclude_hard = exclude_hard
+    @excludeHard = excludeHard
   end
 end
 
@@ -2539,17 +2539,17 @@ class DedicatedBackupDateStruct
   @@schema_element = [["hour", ["SOAP::SOAPString", XSD::QName.new(nil, "hour")]], ["superBackupName", ["SOAP::SOAPString", XSD::QName.new(nil, "superBackupName")]], ["day", ["SOAP::SOAPString", XSD::QName.new(nil, "day")]], ["id", ["SOAP::SOAPInt", XSD::QName.new(nil, "id")]], ["backupCount", ["SOAP::SOAPInt", XSD::QName.new(nil, "backupCount")]]]
 
   attr_accessor :hour
-  attr_accessor :super_backup_name
+  attr_accessor :superBackupName
   attr_accessor :day
   attr_accessor :id
-  attr_accessor :backup_count
+  attr_accessor :backupCount
 
-  def initialize(hour = nil, super_backup_name = nil, day = nil, id = nil, backup_count = nil)
+  def initialize(hour = nil, superBackupName = nil, day = nil, id = nil, backupCount = nil)
     @hour = hour
-    @super_backup_name = super_backup_name
+    @superBackupName = superBackupName
     @day = day
     @id = id
-    @backup_count = backup_count
+    @backupCount = backupCount
   end
 end
 
@@ -2560,15 +2560,15 @@ class DedicatedBackupHistoStruct
   @@schema_element = [["id", ["SOAP::SOAPInt", XSD::QName.new(nil, "id")]], ["backupId", ["SOAP::SOAPInt", XSD::QName.new(nil, "backupId")]], ["dateTime", ["SOAP::SOAPString", XSD::QName.new(nil, "dateTime")]], ["status", ["SOAP::SOAPString", XSD::QName.new(nil, "status")]], ["error", ["SOAP::SOAPString", XSD::QName.new(nil, "error")]]]
 
   attr_accessor :id
-  attr_accessor :backup_id
-  attr_accessor :date_time
+  attr_accessor :backupId
+  attr_accessor :dateTime
   attr_accessor :status
   attr_accessor :error
 
-  def initialize(id = nil, backup_id = nil, date_time = nil, status = nil, error = nil)
+  def initialize(id = nil, backupId = nil, dateTime = nil, status = nil, error = nil)
     @id = id
-    @backup_id = backup_id
-    @date_time = date_time
+    @backupId = backupId
+    @dateTime = dateTime
     @status = status
     @error = error
   end
@@ -2595,14 +2595,14 @@ class DedicatedOrderStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["orderPassword", ["SOAP::SOAPString", XSD::QName.new(nil, "orderPassword")]], ["orderId", ["SOAP::SOAPInt", XSD::QName.new(nil, "orderId")]], ["orderUrl", ["SOAP::SOAPString", XSD::QName.new(nil, "orderUrl")]]]
 
-  attr_accessor :order_password
-  attr_accessor :order_id
-  attr_accessor :order_url
+  attr_accessor :orderPassword
+  attr_accessor :orderId
+  attr_accessor :orderUrl
 
-  def initialize(order_password = nil, order_id = nil, order_url = nil)
-    @order_password = order_password
-    @order_id = order_id
-    @order_url = order_url
+  def initialize(orderPassword = nil, orderId = nil, orderUrl = nil)
+    @orderPassword = orderPassword
+    @orderId = orderId
+    @orderUrl = orderUrl
   end
 end
 
@@ -2613,23 +2613,23 @@ class DedicatedCapabilitiesStruct
   @@schema_element = [["hostname", ["SOAP::SOAPString", XSD::QName.new(nil, "hostname")]], ["originalClassicFailover", ["SOAP::SOAPInt", XSD::QName.new(nil, "originalClassicFailover")]], ["originalFailoverRipe", ["SOAP::SOAPInt", XSD::QName.new(nil, "originalFailoverRipe")]], ["originalLoadBalancingSlot", ["SOAP::SOAPInt", XSD::QName.new(nil, "originalLoadBalancingSlot")]], ["additionalClassicFailover", ["SOAP::SOAPInt", XSD::QName.new(nil, "additionalClassicFailover")]], ["additionalFailoverRipe", ["SOAP::SOAPInt", XSD::QName.new(nil, "additionalFailoverRipe")]], ["usedClassicFailover", ["SOAP::SOAPInt", XSD::QName.new(nil, "usedClassicFailover")]], ["usedFailoverRipe", ["SOAP::SOAPInt", XSD::QName.new(nil, "usedFailoverRipe")]]]
 
   attr_accessor :hostname
-  attr_accessor :original_classic_failover
-  attr_accessor :original_failover_ripe
-  attr_accessor :original_load_balancing_slot
-  attr_accessor :additional_classic_failover
-  attr_accessor :additional_failover_ripe
-  attr_accessor :used_classic_failover
-  attr_accessor :used_failover_ripe
+  attr_accessor :originalClassicFailover
+  attr_accessor :originalFailoverRipe
+  attr_accessor :originalLoadBalancingSlot
+  attr_accessor :additionalClassicFailover
+  attr_accessor :additionalFailoverRipe
+  attr_accessor :usedClassicFailover
+  attr_accessor :usedFailoverRipe
 
-  def initialize(hostname = nil, original_classic_failover = nil, original_failover_ripe = nil, original_load_balancing_slot = nil, additional_classic_failover = nil, additional_failover_ripe = nil, used_classic_failover = nil, used_failover_ripe = nil)
+  def initialize(hostname = nil, originalClassicFailover = nil, originalFailoverRipe = nil, originalLoadBalancingSlot = nil, additionalClassicFailover = nil, additionalFailoverRipe = nil, usedClassicFailover = nil, usedFailoverRipe = nil)
     @hostname = hostname
-    @original_classic_failover = original_classic_failover
-    @original_failover_ripe = original_failover_ripe
-    @original_load_balancing_slot = original_load_balancing_slot
-    @additional_classic_failover = additional_classic_failover
-    @additional_failover_ripe = additional_failover_ripe
-    @used_classic_failover = used_classic_failover
-    @used_failover_ripe = used_failover_ripe
+    @originalClassicFailover = originalClassicFailover
+    @originalFailoverRipe = originalFailoverRipe
+    @originalLoadBalancingSlot = originalLoadBalancingSlot
+    @additionalClassicFailover = additionalClassicFailover
+    @additionalFailoverRipe = additionalFailoverRipe
+    @usedClassicFailover = usedClassicFailover
+    @usedFailoverRipe = usedFailoverRipe
   end
 end
 
@@ -2657,17 +2657,17 @@ class DedicatedIpLoadBalancingStruct
   @@schema_element = [["name", ["SOAP::SOAPString", XSD::QName.new(nil, "name")]], ["ipLoadBalancing", ["SOAP::SOAPString", XSD::QName.new(nil, "ipLoadBalancing")]], ["active", ["SOAP::SOAPInt", XSD::QName.new(nil, "active")]], ["inactive", ["SOAP::SOAPInt", XSD::QName.new(nil, "inactive")]], ["serverList", ["MyArrayOfDedicatedIpLoadBalancingServerStructType", XSD::QName.new(nil, "serverList")]]]
 
   attr_accessor :name
-  attr_accessor :ip_load_balancing
+  attr_accessor :ipLoadBalancing
   attr_accessor :active
   attr_accessor :inactive
-  attr_accessor :server_list
+  attr_accessor :serverList
 
-  def initialize(name = nil, ip_load_balancing = nil, active = nil, inactive = nil, server_list = nil)
+  def initialize(name = nil, ipLoadBalancing = nil, active = nil, inactive = nil, serverList = nil)
     @name = name
-    @ip_load_balancing = ip_load_balancing
+    @ipLoadBalancing = ipLoadBalancing
     @active = active
     @inactive = inactive
-    @server_list = server_list
+    @serverList = serverList
   end
 end
 
@@ -2678,22 +2678,22 @@ class DedicatedRtmStatusReturn
   @@schema_element = [["cpu", ["RtmCpuStruct", XSD::QName.new(nil, "cpu")]], ["hardDrives", ["MyArrayOfRtmHddStructType", XSD::QName.new(nil, "hardDrives")]], ["systemInfo", ["RtmSystemStruct", XSD::QName.new(nil, "systemInfo")]], ["memory", ["RtmMemoryStruct", XSD::QName.new(nil, "memory")]], ["motherboard", ["RtmMotherboardStruct", XSD::QName.new(nil, "motherboard")]], ["lspci", ["MyArrayOfRtmLspciStructType", XSD::QName.new(nil, "lspci")]], ["portsUsed", ["RtmPortsStruct", XSD::QName.new(nil, "portsUsed")]], ["raid", ["RtmRaidStruct", XSD::QName.new(nil, "raid")]]]
 
   attr_accessor :cpu
-  attr_accessor :hard_drives
-  attr_accessor :system_info
+  attr_accessor :hardDrives
+  attr_accessor :systemInfo
   attr_accessor :memory
   attr_accessor :motherboard
   attr_accessor :lspci
-  attr_accessor :ports_used
+  attr_accessor :portsUsed
   attr_accessor :raid
 
-  def initialize(cpu = nil, hard_drives = nil, system_info = nil, memory = nil, motherboard = nil, lspci = nil, ports_used = nil, raid = nil)
+  def initialize(cpu = nil, hardDrives = nil, systemInfo = nil, memory = nil, motherboard = nil, lspci = nil, portsUsed = nil, raid = nil)
     @cpu = cpu
-    @hard_drives = hard_drives
-    @system_info = system_info
+    @hardDrives = hardDrives
+    @systemInfo = systemInfo
     @memory = memory
     @motherboard = motherboard
     @lspci = lspci
-    @ports_used = ports_used
+    @portsUsed = portsUsed
     @raid = raid
   end
 end
@@ -2708,16 +2708,16 @@ class RtmCpuStruct
   attr_accessor :core
   attr_accessor :name
   attr_accessor :cache
-  attr_accessor :percent_load
-  attr_accessor :load_avg
+  attr_accessor :percentLoad
+  attr_accessor :loadAvg
 
-  def initialize(frequency = nil, core = nil, name = nil, cache = nil, percent_load = nil, load_avg = nil)
+  def initialize(frequency = nil, core = nil, name = nil, cache = nil, percentLoad = nil, loadAvg = nil)
     @frequency = frequency
     @core = core
     @name = name
     @cache = cache
-    @percent_load = percent_load
-    @load_avg = load_avg
+    @percentLoad = percentLoad
+    @loadAvg = loadAvg
   end
 end
 
@@ -2768,17 +2768,17 @@ class RtmHddSmartStruct
   @@schema_element = [["status", ["SOAP::SOAPString", XSD::QName.new(nil, "status")]], ["multizoneErrorRate", ["SOAP::SOAPInt", XSD::QName.new(nil, "multizoneErrorRate")]], ["currentPendingSector", ["SOAP::SOAPInt", XSD::QName.new(nil, "currentPendingSector")]], ["udmaCrcError", ["SOAP::SOAPInt", XSD::QName.new(nil, "udmaCrcError")]], ["offlineUncorrectable", ["SOAP::SOAPInt", XSD::QName.new(nil, "offlineUncorrectable")]]]
 
   attr_accessor :status
-  attr_accessor :multizone_error_rate
-  attr_accessor :current_pending_sector
-  attr_accessor :udma_crc_error
-  attr_accessor :offline_uncorrectable
+  attr_accessor :multizoneErrorRate
+  attr_accessor :currentPendingSector
+  attr_accessor :udmaCrcError
+  attr_accessor :offlineUncorrectable
 
-  def initialize(status = nil, multizone_error_rate = nil, current_pending_sector = nil, udma_crc_error = nil, offline_uncorrectable = nil)
+  def initialize(status = nil, multizoneErrorRate = nil, currentPendingSector = nil, udmaCrcError = nil, offlineUncorrectable = nil)
     @status = status
-    @multizone_error_rate = multizone_error_rate
-    @current_pending_sector = current_pending_sector
-    @udma_crc_error = udma_crc_error
-    @offline_uncorrectable = offline_uncorrectable
+    @multizoneErrorRate = multizoneErrorRate
+    @currentPendingSector = currentPendingSector
+    @udmaCrcError = udmaCrcError
+    @offlineUncorrectable = offlineUncorrectable
   end
 end
 
@@ -2789,15 +2789,15 @@ class RtmHddPartitionStruct
   @@schema_element = [["device", ["SOAP::SOAPString", XSD::QName.new(nil, "device")]], ["percentUsed", ["SOAP::SOAPInt", XSD::QName.new(nil, "percentUsed")]], ["percentInodes", ["SOAP::SOAPInt", XSD::QName.new(nil, "percentInodes")]], ["mountPoint", ["SOAP::SOAPString", XSD::QName.new(nil, "mountPoint")]]]
 
   attr_accessor :device
-  attr_accessor :percent_used
-  attr_accessor :percent_inodes
-  attr_accessor :mount_point
+  attr_accessor :percentUsed
+  attr_accessor :percentInodes
+  attr_accessor :mountPoint
 
-  def initialize(device = nil, percent_used = nil, percent_inodes = nil, mount_point = nil)
+  def initialize(device = nil, percentUsed = nil, percentInodes = nil, mountPoint = nil)
     @device = device
-    @percent_used = percent_used
-    @percent_inodes = percent_inodes
-    @mount_point = mount_point
+    @percentUsed = percentUsed
+    @percentInodes = percentInodes
+    @mountPoint = mountPoint
   end
 end
 
@@ -2904,11 +2904,11 @@ class RtmMemoryModuleStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["moduleName", ["SOAP::SOAPString", XSD::QName.new(nil, "moduleName")]], ["value", ["SOAP::SOAPString", XSD::QName.new(nil, "value")]]]
 
-  attr_accessor :module_name
+  attr_accessor :moduleName
   attr_accessor :value
 
-  def initialize(module_name = nil, value = nil)
-    @module_name = module_name
+  def initialize(moduleName = nil, value = nil)
+    @moduleName = moduleName
     @value = value
   end
 end
@@ -2920,11 +2920,11 @@ class RtmMotherboardStruct
   @@schema_element = [["manufacture", ["SOAP::SOAPString", XSD::QName.new(nil, "manufacture")]], ["modelName", ["SOAP::SOAPString", XSD::QName.new(nil, "modelName")]]]
 
   attr_accessor :manufacture
-  attr_accessor :model_name
+  attr_accessor :modelName
 
-  def initialize(manufacture = nil, model_name = nil)
+  def initialize(manufacture = nil, modelName = nil)
     @manufacture = manufacture
-    @model_name = model_name
+    @modelName = modelName
   end
 end
 
@@ -3030,7 +3030,7 @@ class RtmRaidPartitionVolumeStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["volumeName", ["SOAP::SOAPString", XSD::QName.new(nil, "volumeName")]], ["flags", ["SOAP::SOAPString", XSD::QName.new(nil, "flags")]], ["status", ["SOAP::SOAPString", XSD::QName.new(nil, "status")]], ["type", ["SOAP::SOAPString", XSD::QName.new(nil, "type")]], ["capacity", ["SOAP::SOAPString", XSD::QName.new(nil, "capacity")]], ["phys", ["SOAP::SOAPInt", XSD::QName.new(nil, "phys")]], ["members", ["MyArrayOfRtmRaidPartitionVolumeMemberStructType", XSD::QName.new(nil, "members")]]]
 
-  attr_accessor :volume_name
+  attr_accessor :volumeName
   attr_accessor :flags
   attr_accessor :status
   attr_accessor :type
@@ -3038,8 +3038,8 @@ class RtmRaidPartitionVolumeStruct
   attr_accessor :phys
   attr_accessor :members
 
-  def initialize(volume_name = nil, flags = nil, status = nil, type = nil, capacity = nil, phys = nil, members = nil)
-    @volume_name = volume_name
+  def initialize(volumeName = nil, flags = nil, status = nil, type = nil, capacity = nil, phys = nil, members = nil)
+    @volumeName = volumeName
     @flags = flags
     @status = status
     @type = type
@@ -3055,15 +3055,15 @@ class RtmRaidPartitionVolumeMemberStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["memberName", ["SOAP::SOAPString", XSD::QName.new(nil, "memberName")]], ["modelName", ["SOAP::SOAPString", XSD::QName.new(nil, "modelName")]], ["flags", ["SOAP::SOAPString", XSD::QName.new(nil, "flags")]], ["status", ["SOAP::SOAPString", XSD::QName.new(nil, "status")]], ["capacity", ["SOAP::SOAPString", XSD::QName.new(nil, "capacity")]]]
 
-  attr_accessor :member_name
-  attr_accessor :model_name
+  attr_accessor :memberName
+  attr_accessor :modelName
   attr_accessor :flags
   attr_accessor :status
   attr_accessor :capacity
 
-  def initialize(member_name = nil, model_name = nil, flags = nil, status = nil, capacity = nil)
-    @member_name = member_name
-    @model_name = model_name
+  def initialize(memberName = nil, modelName = nil, flags = nil, status = nil, capacity = nil)
+    @memberName = memberName
+    @modelName = modelName
     @flags = flags
     @status = status
     @capacity = capacity
@@ -3120,13 +3120,13 @@ class DedicatedRipeGetIpStruct
   @@schema_element = [["exclusion", ["SOAP::SOAPString", XSD::QName.new(nil, "exclusion")]], ["routedTo", ["SOAP::SOAPString", XSD::QName.new(nil, "routedTo")]], ["ip", ["SOAP::SOAPString", XSD::QName.new(nil, "ip")]], ["netname", ["SOAP::SOAPString", XSD::QName.new(nil, "netname")]]]
 
   attr_accessor :exclusion
-  attr_accessor :routed_to
+  attr_accessor :routedTo
   attr_accessor :ip
   attr_accessor :netname
 
-  def initialize(exclusion = nil, routed_to = nil, ip = nil, netname = nil)
+  def initialize(exclusion = nil, routedTo = nil, ip = nil, netname = nil)
     @exclusion = exclusion
-    @routed_to = routed_to
+    @routedTo = routedTo
     @ip = ip
     @netname = netname
   end
@@ -3153,16 +3153,16 @@ class DedicatedIpVirtualMacUsedStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["virtualMachineName", ["SOAP::SOAPString", XSD::QName.new(nil, "virtualMachineName")]], ["status", ["SOAP::SOAPString", XSD::QName.new(nil, "status")]], ["ipAddress", ["SOAP::SOAPString", XSD::QName.new(nil, "ipAddress")]], ["type", ["SOAP::SOAPString", XSD::QName.new(nil, "type")]], ["mac", ["SOAP::SOAPString", XSD::QName.new(nil, "mac")]]]
 
-  attr_accessor :virtual_machine_name
+  attr_accessor :virtualMachineName
   attr_accessor :status
-  attr_accessor :ip_address
+  attr_accessor :ipAddress
   attr_accessor :type
   attr_accessor :mac
 
-  def initialize(virtual_machine_name = nil, status = nil, ip_address = nil, type = nil, mac = nil)
-    @virtual_machine_name = virtual_machine_name
+  def initialize(virtualMachineName = nil, status = nil, ipAddress = nil, type = nil, mac = nil)
+    @virtualMachineName = virtualMachineName
     @status = status
-    @ip_address = ip_address
+    @ipAddress = ipAddress
     @type = type
     @mac = mac
   end
@@ -3174,13 +3174,13 @@ class DedicatedBandwidthManagementReturn
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["serverName", ["SOAP::SOAPString", XSD::QName.new(nil, "serverName")]], ["id", ["SOAP::SOAPInt", XSD::QName.new(nil, "id")]], ["status", ["SOAP::SOAPString", XSD::QName.new(nil, "status")]], ["date", ["SOAP::SOAPString", XSD::QName.new(nil, "date")]]]
 
-  attr_accessor :server_name
+  attr_accessor :serverName
   attr_accessor :id
   attr_accessor :status
   attr_accessor :date
 
-  def initialize(server_name = nil, id = nil, status = nil, date = nil)
-    @server_name = server_name
+  def initialize(serverName = nil, id = nil, status = nil, date = nil)
+    @serverName = serverName
     @id = id
     @status = status
     @date = date
@@ -3193,20 +3193,20 @@ class DedicatedServerPartioningDetailStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["partSize", ["SOAP::SOAPString", XSD::QName.new(nil, "partSize")]], ["id", ["SOAP::SOAPInt", XSD::QName.new(nil, "id")]], ["raidType", ["SOAP::SOAPInt", XSD::QName.new(nil, "raidType")]], ["mountPoint", ["SOAP::SOAPString", XSD::QName.new(nil, "mountPoint")]], ["partType", ["SOAP::SOAPString", XSD::QName.new(nil, "partType")]], ["fileSystem", ["SOAP::SOAPString", XSD::QName.new(nil, "fileSystem")]]]
 
-  attr_accessor :part_size
+  attr_accessor :partSize
   attr_accessor :id
-  attr_accessor :raid_type
-  attr_accessor :mount_point
-  attr_accessor :part_type
-  attr_accessor :file_system
+  attr_accessor :raidType
+  attr_accessor :mountPoint
+  attr_accessor :partType
+  attr_accessor :fileSystem
 
-  def initialize(part_size = nil, id = nil, raid_type = nil, mount_point = nil, part_type = nil, file_system = nil)
-    @part_size = part_size
+  def initialize(partSize = nil, id = nil, raidType = nil, mountPoint = nil, partType = nil, fileSystem = nil)
+    @partSize = partSize
     @id = id
-    @raid_type = raid_type
-    @mount_point = mount_point
-    @part_type = part_type
-    @file_system = file_system
+    @raidType = raidType
+    @mountPoint = mountPoint
+    @partType = partType
+    @fileSystem = fileSystem
   end
 end
 
@@ -3236,21 +3236,21 @@ class DedicatedInstallConfigurationParametersStruct
   @@schema_element = [["language", ["SOAP::SOAPString", XSD::QName.new(nil, "language")]], ["bitFormat", ["SOAP::SOAPString", XSD::QName.new(nil, "bitFormat")]], ["softRaidDevices", ["SOAP::SOAPInt", XSD::QName.new(nil, "softRaidDevices")]], ["serverName", ["SOAP::SOAPString", XSD::QName.new(nil, "serverName")]], ["softRaid", ["SOAP::SOAPString", XSD::QName.new(nil, "softRaid")]], ["distribution", ["SOAP::SOAPString", XSD::QName.new(nil, "distribution")]], ["resinstallTodoId", ["SOAP::SOAPInt", XSD::QName.new(nil, "resinstallTodoId")]]]
 
   attr_accessor :language
-  attr_accessor :bit_format
-  attr_accessor :soft_raid_devices
-  attr_accessor :server_name
-  attr_accessor :soft_raid
+  attr_accessor :bitFormat
+  attr_accessor :softRaidDevices
+  attr_accessor :serverName
+  attr_accessor :softRaid
   attr_accessor :distribution
-  attr_accessor :resinstall_todo_id
+  attr_accessor :resinstallTodoId
 
-  def initialize(language = nil, bit_format = nil, soft_raid_devices = nil, server_name = nil, soft_raid = nil, distribution = nil, resinstall_todo_id = nil)
+  def initialize(language = nil, bitFormat = nil, softRaidDevices = nil, serverName = nil, softRaid = nil, distribution = nil, resinstallTodoId = nil)
     @language = language
-    @bit_format = bit_format
-    @soft_raid_devices = soft_raid_devices
-    @server_name = server_name
-    @soft_raid = soft_raid
+    @bitFormat = bitFormat
+    @softRaidDevices = softRaidDevices
+    @serverName = serverName
+    @softRaid = softRaid
     @distribution = distribution
-    @resinstall_todo_id = resinstall_todo_id
+    @resinstallTodoId = resinstallTodoId
   end
 end
 
@@ -3260,30 +3260,30 @@ class DedicatedInstallConfigurationStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["pendingDate", ["SOAP::SOAPString", XSD::QName.new(nil, "pendingDate")]], ["status", ["SOAP::SOAPString", XSD::QName.new(nil, "status")]], ["stageId", ["SOAP::SOAPInt", XSD::QName.new(nil, "stageId")]], ["serverName", ["SOAP::SOAPString", XSD::QName.new(nil, "serverName")]], ["parameters", ["DedicatedInstallConfigurationParametersStruct", XSD::QName.new(nil, "parameters")]], ["todoDate", ["SOAP::SOAPString", XSD::QName.new(nil, "todoDate")]], ["doingDate", ["SOAP::SOAPString", XSD::QName.new(nil, "doingDate")]], ["error", ["SOAP::SOAPString", XSD::QName.new(nil, "error")]], ["action", ["SOAP::SOAPString", XSD::QName.new(nil, "action")]], ["id", ["SOAP::SOAPInt", XSD::QName.new(nil, "id")]], ["doneDate", ["SOAP::SOAPString", XSD::QName.new(nil, "doneDate")]]]
 
-  attr_accessor :pending_date
+  attr_accessor :pendingDate
   attr_accessor :status
-  attr_accessor :stage_id
-  attr_accessor :server_name
+  attr_accessor :stageId
+  attr_accessor :serverName
   attr_accessor :parameters
-  attr_accessor :todo_date
-  attr_accessor :doing_date
+  attr_accessor :todoDate
+  attr_accessor :doingDate
   attr_accessor :error
   attr_accessor :action
   attr_accessor :id
-  attr_accessor :done_date
+  attr_accessor :doneDate
 
-  def initialize(pending_date = nil, status = nil, stage_id = nil, server_name = nil, parameters = nil, todo_date = nil, doing_date = nil, error = nil, action = nil, id = nil, done_date = nil)
-    @pending_date = pending_date
+  def initialize(pendingDate = nil, status = nil, stageId = nil, serverName = nil, parameters = nil, todoDate = nil, doingDate = nil, error = nil, action = nil, id = nil, doneDate = nil)
+    @pendingDate = pendingDate
     @status = status
-    @stage_id = stage_id
-    @server_name = server_name
+    @stageId = stageId
+    @serverName = serverName
     @parameters = parameters
-    @todo_date = todo_date
-    @doing_date = doing_date
+    @todoDate = todoDate
+    @doingDate = doingDate
     @error = error
     @action = action
     @id = id
-    @done_date = done_date
+    @doneDate = doneDate
   end
 end
 
@@ -3324,14 +3324,14 @@ class DedicatedAllowedDistributionDetailsStruct
   @@schema_element = [["language", ["MyArrayOfDedicatedAllowedDistributionLanguageStructType", XSD::QName.new(nil, "language")]], ["bitFormat", ["MyArrayOfDedicatedAllowedDistributionBitFormatStructType", XSD::QName.new(nil, "bitFormat")]], ["longName", ["SOAP::SOAPString", XSD::QName.new(nil, "longName")]], ["name", ["SOAP::SOAPString", XSD::QName.new(nil, "name")]]]
 
   attr_accessor :language
-  attr_accessor :bit_format
-  attr_accessor :long_name
+  attr_accessor :bitFormat
+  attr_accessor :longName
   attr_accessor :name
 
-  def initialize(language = nil, bit_format = nil, long_name = nil, name = nil)
+  def initialize(language = nil, bitFormat = nil, longName = nil, name = nil)
     @language = language
-    @bit_format = bit_format
-    @long_name = long_name
+    @bitFormat = bitFormat
+    @longName = longName
     @name = name
   end
 end
@@ -3342,13 +3342,13 @@ class DedicatedAllowedDistributionMoreStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["basicDistributions", ["MyArrayOfDedicatedAllowedDistributionDetailsStructType", XSD::QName.new(nil, "basicDistributions")]], ["readyToUse", ["MyArrayOfDedicatedAllowedDistributionDetailsStructType", XSD::QName.new(nil, "readyToUse")]], ["type", ["SOAP::SOAPString", XSD::QName.new(nil, "type")]]]
 
-  attr_accessor :basic_distributions
-  attr_accessor :ready_to_use
+  attr_accessor :basicDistributions
+  attr_accessor :readyToUse
   attr_accessor :type
 
-  def initialize(basic_distributions = nil, ready_to_use = nil, type = nil)
-    @basic_distributions = basic_distributions
-    @ready_to_use = ready_to_use
+  def initialize(basicDistributions = nil, readyToUse = nil, type = nil)
+    @basicDistributions = basicDistributions
+    @readyToUse = readyToUse
     @type = type
   end
 end
@@ -3659,25 +3659,25 @@ class TicketStruct
   @@schema_element = [["id", ["SOAP::SOAPInt", XSD::QName.new(nil, "id")]], ["creationDate", ["SOAP::SOAPString", XSD::QName.new(nil, "creationDate")]], ["requestStatus", ["SOAP::SOAPString", XSD::QName.new(nil, "requestStatus")]], ["subject", ["SOAP::SOAPString", XSD::QName.new(nil, "subject")]], ["nic", ["SOAP::SOAPString", XSD::QName.new(nil, "nic")]], ["level", ["SOAP::SOAPString", XSD::QName.new(nil, "level")]], ["domain", ["SOAP::SOAPString", XSD::QName.new(nil, "domain")]], ["orderId", ["SOAP::SOAPInt", XSD::QName.new(nil, "orderId")]], ["componentType", ["SOAP::SOAPString", XSD::QName.new(nil, "componentType")]]]
 
   attr_accessor :id
-  attr_accessor :creation_date
-  attr_accessor :request_status
+  attr_accessor :creationDate
+  attr_accessor :requestStatus
   attr_accessor :subject
   attr_accessor :nic
   attr_accessor :level
   attr_accessor :domain
-  attr_accessor :order_id
-  attr_accessor :component_type
+  attr_accessor :orderId
+  attr_accessor :componentType
 
-  def initialize(id = nil, creation_date = nil, request_status = nil, subject = nil, nic = nil, level = nil, domain = nil, order_id = nil, component_type = nil)
+  def initialize(id = nil, creationDate = nil, requestStatus = nil, subject = nil, nic = nil, level = nil, domain = nil, orderId = nil, componentType = nil)
     @id = id
-    @creation_date = creation_date
-    @request_status = request_status
+    @creationDate = creationDate
+    @requestStatus = requestStatus
     @subject = subject
     @nic = nic
     @level = level
     @domain = domain
-    @order_id = order_id
-    @component_type = component_type
+    @orderId = orderId
+    @componentType = componentType
   end
 end
 
@@ -3687,8 +3687,8 @@ class FullTicketReturn
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["ticketId", ["SOAP::SOAPInt", XSD::QName.new(nil, "ticketId")]], ["requestStatus", ["SOAP::SOAPString", XSD::QName.new(nil, "requestStatus")]], ["status", ["SOAP::SOAPString", XSD::QName.new(nil, "status")]], ["subject", ["SOAP::SOAPString", XSD::QName.new(nil, "subject")]], ["nic", ["SOAP::SOAPString", XSD::QName.new(nil, "nic")]], ["phone", ["SOAP::SOAPString", XSD::QName.new(nil, "phone")]], ["email", ["SOAP::SOAPString", XSD::QName.new(nil, "email")]], ["level", ["SOAP::SOAPString", XSD::QName.new(nil, "level")]], ["domain", ["SOAP::SOAPString", XSD::QName.new(nil, "domain")]], ["orderId", ["SOAP::SOAPInt", XSD::QName.new(nil, "orderId")]], ["componentType", ["SOAP::SOAPString", XSD::QName.new(nil, "componentType")]], ["messages", ["MyArrayOfMessageDetailStructType", XSD::QName.new(nil, "messages")]]]
 
-  attr_accessor :ticket_id
-  attr_accessor :request_status
+  attr_accessor :ticketId
+  attr_accessor :requestStatus
   attr_accessor :status
   attr_accessor :subject
   attr_accessor :nic
@@ -3696,13 +3696,13 @@ class FullTicketReturn
   attr_accessor :email
   attr_accessor :level
   attr_accessor :domain
-  attr_accessor :order_id
-  attr_accessor :component_type
+  attr_accessor :orderId
+  attr_accessor :componentType
   attr_accessor :messages
 
-  def initialize(ticket_id = nil, request_status = nil, status = nil, subject = nil, nic = nil, phone = nil, email = nil, level = nil, domain = nil, order_id = nil, component_type = nil, messages = nil)
-    @ticket_id = ticket_id
-    @request_status = request_status
+  def initialize(ticketId = nil, requestStatus = nil, status = nil, subject = nil, nic = nil, phone = nil, email = nil, level = nil, domain = nil, orderId = nil, componentType = nil, messages = nil)
+    @ticketId = ticketId
+    @requestStatus = requestStatus
     @status = status
     @subject = subject
     @nic = nic
@@ -3710,8 +3710,8 @@ class FullTicketReturn
     @email = email
     @level = level
     @domain = domain
-    @order_id = order_id
-    @component_type = component_type
+    @orderId = orderId
+    @componentType = componentType
     @messages = messages
   end
 end
@@ -3745,11 +3745,11 @@ class TicketContactStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["componentType", ["SOAP::SOAPString", XSD::QName.new(nil, "componentType")]], ["domains", ["MyArrayOfTicketContactDomainStructType", XSD::QName.new(nil, "domains")]]]
 
-  attr_accessor :component_type
+  attr_accessor :componentType
   attr_accessor :domains
 
-  def initialize(component_type = nil, domains = nil)
-    @component_type = component_type
+  def initialize(componentType = nil, domains = nil)
+    @componentType = componentType
     @domains = domains
   end
 end
@@ -3855,12 +3855,12 @@ class SqlpriveMysqlDatabasePrivilegeStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["databaseName", ["SOAP::SOAPString", XSD::QName.new(nil, "databaseName")]], ["databaseUsers", ["MyArrayOfSqlpriveMysqlDatabaseUserPrivilegeStructType", XSD::QName.new(nil, "databaseUsers")]]]
 
-  attr_accessor :database_name
-  attr_accessor :database_users
+  attr_accessor :databaseName
+  attr_accessor :databaseUsers
 
-  def initialize(database_name = nil, database_users = nil)
-    @database_name = database_name
-    @database_users = database_users
+  def initialize(databaseName = nil, databaseUsers = nil)
+    @databaseName = databaseName
+    @databaseUsers = databaseUsers
   end
 end
 
@@ -3870,12 +3870,12 @@ class SqlpriveMysqlDatabaseUserPrivilegeStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["userName", ["SOAP::SOAPString", XSD::QName.new(nil, "userName")]], ["userPriv", ["SOAP::SOAPString", XSD::QName.new(nil, "userPriv")]]]
 
-  attr_accessor :user_name
-  attr_accessor :user_priv
+  attr_accessor :userName
+  attr_accessor :userPriv
 
-  def initialize(user_name = nil, user_priv = nil)
-    @user_name = user_name
-    @user_priv = user_priv
+  def initialize(userName = nil, userPriv = nil)
+    @userName = userName
+    @userPriv = userPriv
   end
 end
 
@@ -3904,14 +3904,14 @@ class SqlpriveAlertInfotReturn
 
   attr_accessor :email
   attr_accessor :alert
-  attr_accessor :sms_number
-  attr_accessor :sms_account
+  attr_accessor :smsNumber
+  attr_accessor :smsAccount
 
-  def initialize(email = nil, alert = nil, sms_number = nil, sms_account = nil)
+  def initialize(email = nil, alert = nil, smsNumber = nil, smsAccount = nil)
     @email = email
     @alert = alert
-    @sms_number = sms_number
-    @sms_account = sms_account
+    @smsNumber = smsNumber
+    @smsAccount = smsAccount
   end
 end
 
@@ -3926,16 +3926,16 @@ class SqlpriveCronStruct
   attr_accessor :days
   attr_accessor :hours
   attr_accessor :operation
-  attr_accessor :end_date
+  attr_accessor :endDate
   attr_accessor :comment
 
-  def initialize(id = nil, active = nil, days = nil, hours = nil, operation = nil, end_date = nil, comment = nil)
+  def initialize(id = nil, active = nil, days = nil, hours = nil, operation = nil, endDate = nil, comment = nil)
     @id = id
     @active = active
     @days = days
     @hours = hours
     @operation = operation
-    @end_date = end_date
+    @endDate = endDate
     @comment = comment
   end
 end
@@ -3990,16 +3990,16 @@ class ResellerAccountMovementStruct
 
   attr_accessor :amount
   attr_accessor :balance
-  attr_accessor :previous_balance
+  attr_accessor :previousBalance
   attr_accessor :date
   attr_accessor :description
   attr_accessor :operation
   attr_accessor :order
 
-  def initialize(amount = nil, balance = nil, previous_balance = nil, date = nil, description = nil, operation = nil, order = nil)
+  def initialize(amount = nil, balance = nil, previousBalance = nil, date = nil, description = nil, operation = nil, order = nil)
     @amount = amount
     @balance = balance
-    @previous_balance = previous_balance
+    @previousBalance = previousBalance
     @date = date
     @description = description
     @operation = operation
@@ -4035,23 +4035,23 @@ class ResellerAccountSummaryReturn
   attr_accessor :country
   attr_accessor :description
   attr_accessor :balance
-  attr_accessor :alert_threshold
-  attr_accessor :limit_threshold
-  attr_accessor :open_date
+  attr_accessor :alertThreshold
+  attr_accessor :limitThreshold
+  attr_accessor :openDate
   attr_accessor :date
-  attr_accessor :close_date
+  attr_accessor :closeDate
 
-  def initialize(nic = nil, account = nil, country = nil, description = nil, balance = nil, alert_threshold = nil, limit_threshold = nil, open_date = nil, date = nil, close_date = nil)
+  def initialize(nic = nil, account = nil, country = nil, description = nil, balance = nil, alertThreshold = nil, limitThreshold = nil, openDate = nil, date = nil, closeDate = nil)
     @nic = nic
     @account = account
     @country = country
     @description = description
     @balance = balance
-    @alert_threshold = alert_threshold
-    @limit_threshold = limit_threshold
-    @open_date = open_date
+    @alertThreshold = alertThreshold
+    @limitThreshold = limitThreshold
+    @openDate = openDate
     @date = date
-    @close_date = close_date
+    @closeDate = closeDate
   end
 end
 
@@ -4070,20 +4070,20 @@ class InfrastructureIpStruct
 
   attr_accessor :country
   attr_accessor :netname
-  attr_accessor :routed_to
+  attr_accessor :routedTo
   attr_accessor :status
-  attr_accessor :addresses_number
-  attr_accessor :network_ip
-  attr_accessor :ip_address_from_block
+  attr_accessor :addressesNumber
+  attr_accessor :networkIp
+  attr_accessor :ipAddressFromBlock
 
-  def initialize(country = nil, netname = nil, routed_to = nil, status = nil, addresses_number = nil, network_ip = nil, ip_address_from_block = nil)
+  def initialize(country = nil, netname = nil, routedTo = nil, status = nil, addressesNumber = nil, networkIp = nil, ipAddressFromBlock = nil)
     @country = country
     @netname = netname
-    @routed_to = routed_to
+    @routedTo = routedTo
     @status = status
-    @addresses_number = addresses_number
-    @network_ip = network_ip
-    @ip_address_from_block = ip_address_from_block
+    @addressesNumber = addressesNumber
+    @networkIp = networkIp
+    @ipAddressFromBlock = ipAddressFromBlock
   end
 end
 
@@ -4102,16 +4102,16 @@ class AccountMovementStruct
 
   attr_accessor :amount
   attr_accessor :balance
-  attr_accessor :previous_balance
+  attr_accessor :previousBalance
   attr_accessor :date
   attr_accessor :description
   attr_accessor :operation
   attr_accessor :order
 
-  def initialize(amount = nil, balance = nil, previous_balance = nil, date = nil, description = nil, operation = nil, order = nil)
+  def initialize(amount = nil, balance = nil, previousBalance = nil, date = nil, description = nil, operation = nil, order = nil)
     @amount = amount
     @balance = balance
-    @previous_balance = previous_balance
+    @previousBalance = previousBalance
     @date = date
     @description = description
     @operation = operation
@@ -4147,23 +4147,23 @@ class AccountSummaryReturn
   attr_accessor :country
   attr_accessor :description
   attr_accessor :balance
-  attr_accessor :alert_threshold
-  attr_accessor :limit_threshold
-  attr_accessor :open_date
+  attr_accessor :alertThreshold
+  attr_accessor :limitThreshold
+  attr_accessor :openDate
   attr_accessor :date
-  attr_accessor :close_date
+  attr_accessor :closeDate
 
-  def initialize(nic = nil, account = nil, country = nil, description = nil, balance = nil, alert_threshold = nil, limit_threshold = nil, open_date = nil, date = nil, close_date = nil)
+  def initialize(nic = nil, account = nil, country = nil, description = nil, balance = nil, alertThreshold = nil, limitThreshold = nil, openDate = nil, date = nil, closeDate = nil)
     @nic = nic
     @account = account
     @country = country
     @description = description
     @balance = balance
-    @alert_threshold = alert_threshold
-    @limit_threshold = limit_threshold
-    @open_date = open_date
+    @alertThreshold = alertThreshold
+    @limitThreshold = limitThreshold
+    @openDate = openDate
     @date = date
-    @close_date = close_date
+    @closeDate = closeDate
   end
 end
 
@@ -4183,19 +4183,19 @@ class HostingChangeMainDomainReturn
   attr_accessor :id
   attr_accessor :country
   attr_accessor :password
-  attr_accessor :total_price_with_vat
-  attr_accessor :total_price
+  attr_accessor :totalPriceWithVat
+  attr_accessor :totalPrice
   attr_accessor :url
-  attr_accessor :vat_rate
+  attr_accessor :vatRate
 
-  def initialize(id = nil, country = nil, password = nil, total_price_with_vat = nil, total_price = nil, url = nil, vat_rate = nil)
+  def initialize(id = nil, country = nil, password = nil, totalPriceWithVat = nil, totalPrice = nil, url = nil, vatRate = nil)
     @id = id
     @country = country
     @password = password
-    @total_price_with_vat = total_price_with_vat
-    @total_price = total_price
+    @totalPriceWithVat = totalPriceWithVat
+    @totalPrice = totalPrice
     @url = url
-    @vat_rate = vat_rate
+    @vatRate = vatRate
   end
 end
 
@@ -4209,15 +4209,15 @@ class HostingGetCapabilitiesReturn
   attr_accessor :webspace
   attr_accessor :traffic
   attr_accessor :databases
-  attr_accessor :database_space
+  attr_accessor :databaseSpace
   attr_accessor :multidomains
   attr_accessor :subdomains
   attr_accessor :streaming
   attr_accessor :multiftp
   attr_accessor :anonymousftp
-  attr_accessor :free_dom_per_year
-  attr_accessor :free_dom_max
-  attr_accessor :shared_ssl
+  attr_accessor :freeDomPerYear
+  attr_accessor :freeDomMax
+  attr_accessor :sharedSSL
   attr_accessor :ssh
   attr_accessor :geoloc
   attr_accessor :cgi
@@ -4226,20 +4226,20 @@ class HostingGetCapabilitiesReturn
   attr_accessor :vpn
   attr_accessor :jabber
 
-  def initialize(name = nil, webspace = nil, traffic = nil, databases = nil, database_space = nil, multidomains = nil, subdomains = nil, streaming = nil, multiftp = nil, anonymousftp = nil, free_dom_per_year = nil, free_dom_max = nil, shared_ssl = nil, ssh = nil, geoloc = nil, cgi = nil, crontab = nil, sip = nil, vpn = nil, jabber = nil)
+  def initialize(name = nil, webspace = nil, traffic = nil, databases = nil, databaseSpace = nil, multidomains = nil, subdomains = nil, streaming = nil, multiftp = nil, anonymousftp = nil, freeDomPerYear = nil, freeDomMax = nil, sharedSSL = nil, ssh = nil, geoloc = nil, cgi = nil, crontab = nil, sip = nil, vpn = nil, jabber = nil)
     @name = name
     @webspace = webspace
     @traffic = traffic
     @databases = databases
-    @database_space = database_space
+    @databaseSpace = databaseSpace
     @multidomains = multidomains
     @subdomains = subdomains
     @streaming = streaming
     @multiftp = multiftp
     @anonymousftp = anonymousftp
-    @free_dom_per_year = free_dom_per_year
-    @free_dom_max = free_dom_max
-    @shared_ssl = shared_ssl
+    @freeDomPerYear = freeDomPerYear
+    @freeDomMax = freeDomMax
+    @sharedSSL = sharedSSL
     @ssh = ssh
     @geoloc = geoloc
     @cgi = cgi
@@ -4273,7 +4273,7 @@ class HostingSummaryReturn
 
   attr_accessor :country
   attr_accessor :webspace
-  attr_accessor :max_webspace
+  attr_accessor :maxWebspace
   attr_accessor :subdomains
   attr_accessor :multidomains
   attr_accessor :multiftps
@@ -4282,13 +4282,13 @@ class HostingSummaryReturn
   attr_accessor :freedom_remaining
   attr_accessor :freedom_assigned
   attr_accessor :freedom_total
-  attr_accessor :high_capacity
-  attr_accessor :high_security
+  attr_accessor :highCapacity
+  attr_accessor :highSecurity
 
-  def initialize(country = nil, webspace = nil, max_webspace = nil, subdomains = nil, multidomains = nil, multiftps = nil, anonymousftp = nil, databases = nil, freedom_remaining = nil, freedom_assigned = nil, freedom_total = nil, high_capacity = nil, high_security = nil)
+  def initialize(country = nil, webspace = nil, maxWebspace = nil, subdomains = nil, multidomains = nil, multiftps = nil, anonymousftp = nil, databases = nil, freedom_remaining = nil, freedom_assigned = nil, freedom_total = nil, highCapacity = nil, highSecurity = nil)
     @country = country
     @webspace = webspace
-    @max_webspace = max_webspace
+    @maxWebspace = maxWebspace
     @subdomains = subdomains
     @multidomains = multidomains
     @multiftps = multiftps
@@ -4297,8 +4297,8 @@ class HostingSummaryReturn
     @freedom_remaining = freedom_remaining
     @freedom_assigned = freedom_assigned
     @freedom_total = freedom_total
-    @high_capacity = high_capacity
-    @high_security = high_security
+    @highCapacity = highCapacity
+    @highSecurity = highSecurity
   end
 end
 
@@ -4310,20 +4310,20 @@ class FtpInfoReturn
 
   attr_accessor :login
   attr_accessor :quota
-  attr_accessor :max_quota
+  attr_accessor :maxQuota
   attr_accessor :url
-  attr_accessor :is_todo
-  attr_accessor :high_capacity
-  attr_accessor :high_security
+  attr_accessor :isTodo
+  attr_accessor :highCapacity
+  attr_accessor :highSecurity
 
-  def initialize(login = nil, quota = nil, max_quota = nil, url = nil, is_todo = nil, high_capacity = nil, high_security = nil)
+  def initialize(login = nil, quota = nil, maxQuota = nil, url = nil, isTodo = nil, highCapacity = nil, highSecurity = nil)
     @login = login
     @quota = quota
-    @max_quota = max_quota
+    @maxQuota = maxQuota
     @url = url
-    @is_todo = is_todo
-    @high_capacity = high_capacity
-    @high_security = high_security
+    @isTodo = isTodo
+    @highCapacity = highCapacity
+    @highSecurity = highSecurity
   end
 end
 
@@ -4488,11 +4488,11 @@ class LogsAccessStruct
   @@schema_element = [["user", ["SOAP::SOAPString", XSD::QName.new(nil, "user")]], ["lastUpdate", ["SOAP::SOAPString", XSD::QName.new(nil, "lastUpdate")]]]
 
   attr_accessor :user
-  attr_accessor :last_update
+  attr_accessor :lastUpdate
 
-  def initialize(user = nil, last_update = nil)
+  def initialize(user = nil, lastUpdate = nil)
     @user = user
-    @last_update = last_update
+    @lastUpdate = lastUpdate
   end
 end
 
@@ -4511,7 +4511,7 @@ class AutomatedMailGetStateReturn
   end
 
   def return=(value)
-    @v_return = v_return
+    @v_return = value
   end
 
   def initialize(bounce = nil, sent = nil, v_return = nil, state = nil)
@@ -4566,15 +4566,15 @@ class CmsAvailableStruct
   attr_accessor :version
   attr_accessor :language
   attr_accessor :category
-  attr_accessor :db_prefix
+  attr_accessor :dbPrefix
   attr_accessor :enable
 
-  def initialize(name = nil, version = nil, language = nil, category = nil, db_prefix = nil, enable = nil)
+  def initialize(name = nil, version = nil, language = nil, category = nil, dbPrefix = nil, enable = nil)
     @name = name
     @version = version
     @language = language
     @category = category
-    @db_prefix = db_prefix
+    @dbPrefix = dbPrefix
     @enable = enable
   end
 end
@@ -4591,16 +4591,16 @@ class CmsStruct
   attr_accessor :language
   attr_accessor :url
   attr_accessor :path
-  attr_accessor :admin_login
+  attr_accessor :adminLogin
 
-  def initialize(id = nil, name = nil, version = nil, language = nil, url = nil, path = nil, admin_login = nil)
+  def initialize(id = nil, name = nil, version = nil, language = nil, url = nil, path = nil, adminLogin = nil)
     @id = id
     @name = name
     @version = version
     @language = language
     @url = url
     @path = path
-    @admin_login = admin_login
+    @adminLogin = adminLogin
   end
 end
 
@@ -4636,19 +4636,19 @@ class CrontabInfoReturn
   attr_accessor :desc
   attr_accessor :email
   attr_accessor :enabled
-  attr_accessor :program_language
-  attr_accessor :week_day
+  attr_accessor :programLanguage
+  attr_accessor :weekDay
   attr_accessor :days
   attr_accessor :hours
 
-  def initialize(id = nil, path = nil, desc = nil, email = nil, enabled = nil, program_language = nil, week_day = nil, days = nil, hours = nil)
+  def initialize(id = nil, path = nil, desc = nil, email = nil, enabled = nil, programLanguage = nil, weekDay = nil, days = nil, hours = nil)
     @id = id
     @path = path
     @desc = desc
     @email = email
     @enabled = enabled
-    @program_language = program_language
-    @week_day = week_day
+    @programLanguage = programLanguage
+    @weekDay = weekDay
     @days = days
     @hours = hours
   end
@@ -4773,20 +4773,20 @@ class FreedomStruct
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["referenceReferer", ["SOAP::SOAPString", XSD::QName.new(nil, "referenceReferer")]], ["creationDate", ["SOAP::SOAPString", XSD::QName.new(nil, "creationDate")]], ["status", ["SOAP::SOAPString", XSD::QName.new(nil, "status")]], ["freeDom", ["SOAP::SOAPString", XSD::QName.new(nil, "freeDom")]], ["useDate", ["SOAP::SOAPString", XSD::QName.new(nil, "useDate")]], ["domainReferer", ["SOAP::SOAPString", XSD::QName.new(nil, "domainReferer")]]]
 
-  attr_accessor :reference_referer
-  attr_accessor :creation_date
+  attr_accessor :referenceReferer
+  attr_accessor :creationDate
   attr_accessor :status
-  attr_accessor :free_dom
-  attr_accessor :use_date
-  attr_accessor :domain_referer
+  attr_accessor :freeDom
+  attr_accessor :useDate
+  attr_accessor :domainReferer
 
-  def initialize(reference_referer = nil, creation_date = nil, status = nil, free_dom = nil, use_date = nil, domain_referer = nil)
-    @reference_referer = reference_referer
-    @creation_date = creation_date
+  def initialize(referenceReferer = nil, creationDate = nil, status = nil, freeDom = nil, useDate = nil, domainReferer = nil)
+    @referenceReferer = referenceReferer
+    @creationDate = creationDate
     @status = status
-    @free_dom = free_dom
-    @use_date = use_date
-    @domain_referer = domain_referer
+    @freeDom = freeDom
+    @useDate = useDate
+    @domainReferer = domainReferer
   end
 end
 
@@ -4928,33 +4928,33 @@ class OperationStruct
   attr_accessor :domain
   attr_accessor :function
   attr_accessor :status
-  attr_accessor :internal_status
+  attr_accessor :internalStatus
   attr_accessor :comment
   attr_accessor :users
-  attr_accessor :todo_date
-  attr_accessor :last_update
-  attr_accessor :done_date
+  attr_accessor :todoDate
+  attr_accessor :lastUpdate
+  attr_accessor :doneDate
 
   def retry
     @v_retry
   end
 
   def retry=(value)
-    @v_retry = v_retry
+    @v_retry = value
   end
 
-  def initialize(id = nil, domain = nil, function = nil, status = nil, internal_status = nil, comment = nil, users = nil, v_retry = nil, todo_date = nil, last_update = nil, done_date = nil)
+  def initialize(id = nil, domain = nil, function = nil, status = nil, internalStatus = nil, comment = nil, users = nil, v_retry = nil, todoDate = nil, lastUpdate = nil, doneDate = nil)
     @id = id
     @domain = domain
     @function = function
     @status = status
-    @internal_status = internal_status
+    @internalStatus = internalStatus
     @comment = comment
     @users = users
     @v_retry = v_retry
-    @todo_date = todo_date
-    @last_update = last_update
-    @done_date = done_date
+    @todoDate = todoDate
+    @lastUpdate = lastUpdate
+    @doneDate = doneDate
   end
 end
 
@@ -5035,13 +5035,13 @@ class GlobalAccessStruct
   attr_accessor :alldom
   attr_accessor :ssl
   attr_accessor :rps
-  attr_accessor :rps_orphan
+  attr_accessor :rpsOrphan
   attr_accessor :vs
   attr_accessor :voip
   attr_accessor :housing
   attr_accessor :sqlpriv
 
-  def initialize(name = nil, domain = nil, hosting = nil, email = nil, pop = nil, dedicated = nil, reverse = nil, alldom = nil, ssl = nil, rps = nil, rps_orphan = nil, vs = nil, voip = nil, housing = nil, sqlpriv = nil)
+  def initialize(name = nil, domain = nil, hosting = nil, email = nil, pop = nil, dedicated = nil, reverse = nil, alldom = nil, ssl = nil, rps = nil, rpsOrphan = nil, vs = nil, voip = nil, housing = nil, sqlpriv = nil)
     @name = name
     @domain = domain
     @hosting = hosting
@@ -5052,7 +5052,7 @@ class GlobalAccessStruct
     @alldom = alldom
     @ssl = ssl
     @rps = rps
-    @rps_orphan = rps_orphan
+    @rpsOrphan = rpsOrphan
     @vs = vs
     @voip = voip
     @housing = housing
@@ -5091,13 +5091,13 @@ class EmailRedirectionStruct
   attr_accessor :target
   attr_accessor :local
   attr_accessor :subdomain
-  attr_accessor :dns_redirection
+  attr_accessor :dnsRedirection
 
-  def initialize(target = nil, local = nil, subdomain = nil, dns_redirection = nil)
+  def initialize(target = nil, local = nil, subdomain = nil, dnsRedirection = nil)
     @target = target
     @local = local
     @subdomain = subdomain
-    @dns_redirection = dns_redirection
+    @dnsRedirection = dnsRedirection
   end
 end
 
@@ -5128,14 +5128,14 @@ class PopGetQuotaReturn
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["emailCount", ["SOAP::SOAPInt", XSD::QName.new(nil, "emailCount")]], ["quota", ["SOAP::SOAPInt", XSD::QName.new(nil, "quota")]], ["maxQuota", ["SOAP::SOAPInt", XSD::QName.new(nil, "maxQuota")]]]
 
-  attr_accessor :email_count
+  attr_accessor :emailCount
   attr_accessor :quota
-  attr_accessor :max_quota
+  attr_accessor :maxQuota
 
-  def initialize(email_count = nil, quota = nil, max_quota = nil)
-    @email_count = email_count
+  def initialize(emailCount = nil, quota = nil, maxQuota = nil)
+    @emailCount = emailCount
     @quota = quota
-    @max_quota = max_quota
+    @maxQuota = maxQuota
   end
 end
 
@@ -5148,18 +5148,18 @@ class MailingListStruct
   attr_accessor :domain
   attr_accessor :ml
   attr_accessor :owner
-  attr_accessor :nb_subscribers
+  attr_accessor :nbSubscribers
   attr_accessor :message_moderation
   attr_accessor :users_post_only
   attr_accessor :subscription_moderation
   attr_accessor :replyto
   attr_accessor :lang
 
-  def initialize(domain = nil, ml = nil, owner = nil, nb_subscribers = nil, message_moderation = nil, users_post_only = nil, subscription_moderation = nil, replyto = nil, lang = nil)
+  def initialize(domain = nil, ml = nil, owner = nil, nbSubscribers = nil, message_moderation = nil, users_post_only = nil, subscription_moderation = nil, replyto = nil, lang = nil)
     @domain = domain
     @ml = ml
     @owner = owner
-    @nb_subscribers = nb_subscribers
+    @nbSubscribers = nbSubscribers
     @message_moderation = message_moderation
     @users_post_only = users_post_only
     @subscription_moderation = subscription_moderation
@@ -5177,7 +5177,7 @@ class MailingListFullInfoReturn
   attr_accessor :domain
   attr_accessor :ml
   attr_accessor :owner
-  attr_accessor :nb_subscribers
+  attr_accessor :nbSubscribers
   attr_accessor :message_moderation
   attr_accessor :users_post_only
   attr_accessor :subscription_moderation
@@ -5186,11 +5186,11 @@ class MailingListFullInfoReturn
   attr_accessor :moderators
   attr_accessor :subscribers
 
-  def initialize(domain = nil, ml = nil, owner = nil, nb_subscribers = nil, message_moderation = nil, users_post_only = nil, subscription_moderation = nil, replyto = nil, lang = nil, moderators = nil, subscribers = nil)
+  def initialize(domain = nil, ml = nil, owner = nil, nbSubscribers = nil, message_moderation = nil, users_post_only = nil, subscription_moderation = nil, replyto = nil, lang = nil, moderators = nil, subscribers = nil)
     @domain = domain
     @ml = ml
     @owner = owner
-    @nb_subscribers = nb_subscribers
+    @nbSubscribers = nbSubscribers
     @message_moderation = message_moderation
     @users_post_only = users_post_only
     @subscription_moderation = subscription_moderation
@@ -5210,15 +5210,15 @@ class ResponderEmailStruct
   attr_accessor :domain
   attr_accessor :responder
   attr_accessor :content
-  attr_accessor :has_pop
-  attr_accessor :has_alias
+  attr_accessor :hasPop
+  attr_accessor :hasAlias
 
-  def initialize(domain = nil, responder = nil, content = nil, has_pop = nil, has_alias = nil)
+  def initialize(domain = nil, responder = nil, content = nil, hasPop = nil, hasAlias = nil)
     @domain = domain
     @responder = responder
     @content = content
-    @has_pop = has_pop
-    @has_alias = has_alias
+    @hasPop = hasPop
+    @hasAlias = hasAlias
   end
 end
 
@@ -5245,15 +5245,15 @@ class EmailDomainSummaryReturn
   @@schema_ns = "http://soapi.ovh.com/manager"
   @@schema_element = [["masterNic", ["SOAP::SOAPString", XSD::QName.new(nil, "masterNic")]], ["nbpops", ["SOAP::SOAPInt", XSD::QName.new(nil, "nbpops")]], ["nbforwards", ["SOAP::SOAPInt", XSD::QName.new(nil, "nbforwards")]], ["nbaliases", ["SOAP::SOAPInt", XSD::QName.new(nil, "nbaliases")]], ["nbresponders", ["SOAP::SOAPInt", XSD::QName.new(nil, "nbresponders")]], ["nbmls", ["SOAP::SOAPInt", XSD::QName.new(nil, "nbmls")]]]
 
-  attr_accessor :master_nic
+  attr_accessor :masterNic
   attr_accessor :nbpops
   attr_accessor :nbforwards
   attr_accessor :nbaliases
   attr_accessor :nbresponders
   attr_accessor :nbmls
 
-  def initialize(master_nic = nil, nbpops = nil, nbforwards = nil, nbaliases = nil, nbresponders = nil, nbmls = nil)
-    @master_nic = master_nic
+  def initialize(masterNic = nil, nbpops = nil, nbforwards = nil, nbaliases = nil, nbresponders = nil, nbmls = nil)
+    @masterNic = masterNic
     @nbpops = nbpops
     @nbforwards = nbforwards
     @nbaliases = nbaliases
@@ -5296,16 +5296,16 @@ class EmailFilterStruct
   attr_accessor :action_param
   attr_accessor :active
   attr_accessor :priority
-  attr_accessor :nb_rules
+  attr_accessor :nbRules
   attr_accessor :rules
 
-  def initialize(filter = nil, action = nil, action_param = nil, active = nil, priority = nil, nb_rules = nil, rules = nil)
+  def initialize(filter = nil, action = nil, action_param = nil, active = nil, priority = nil, nbRules = nil, rules = nil)
     @filter = filter
     @action = action
     @action_param = action_param
     @active = active
     @priority = priority
-    @nb_rules = nb_rules
+    @nbRules = nbRules
     @rules = rules
   end
 end
@@ -5418,7 +5418,7 @@ class PrepaidGetHistoryReturn
   end
 
   def end=(value)
-    @v_end = v_end
+    @v_end = value
   end
 
   def initialize(page = nil, total = nil, start = nil, v_end = nil, operations = nil)
@@ -5480,26 +5480,26 @@ class BillingInvoiceStruct
   @@schema_element = [["vat", ["SOAP::SOAPString", XSD::QName.new(nil, "vat")]], ["totalPrice", ["SOAP::SOAPString", XSD::QName.new(nil, "totalPrice")]], ["totalPriceWithVat", ["SOAP::SOAPString", XSD::QName.new(nil, "totalPriceWithVat")]], ["date", ["SOAP::SOAPString", XSD::QName.new(nil, "date")]], ["nic", ["SOAP::SOAPString", XSD::QName.new(nil, "nic")]], ["billnum", ["SOAP::SOAPString", XSD::QName.new(nil, "billnum")]], ["details", ["MyArrayOfBillingInvoiceDetailStructType", XSD::QName.new(nil, "details")]], ["domains", ["MyArrayOfStringType", XSD::QName.new(nil, "domains")]], ["billingCountry", ["SOAP::SOAPString", XSD::QName.new(nil, "billingCountry")]], ["ordernum", ["SOAP::SOAPString", XSD::QName.new(nil, "ordernum")]]]
 
   attr_accessor :vat
-  attr_accessor :total_price
-  attr_accessor :total_price_with_vat
+  attr_accessor :totalPrice
+  attr_accessor :totalPriceWithVat
   attr_accessor :date
   attr_accessor :nic
   attr_accessor :billnum
   attr_accessor :details
   attr_accessor :domains
-  attr_accessor :billing_country
+  attr_accessor :billingCountry
   attr_accessor :ordernum
 
-  def initialize(vat = nil, total_price = nil, total_price_with_vat = nil, date = nil, nic = nil, billnum = nil, details = nil, domains = nil, billing_country = nil, ordernum = nil)
+  def initialize(vat = nil, totalPrice = nil, totalPriceWithVat = nil, date = nil, nic = nil, billnum = nil, details = nil, domains = nil, billingCountry = nil, ordernum = nil)
     @vat = vat
-    @total_price = total_price
-    @total_price_with_vat = total_price_with_vat
+    @totalPrice = totalPrice
+    @totalPriceWithVat = totalPriceWithVat
     @date = date
     @nic = nic
     @billnum = billnum
     @details = details
     @domains = domains
-    @billing_country = billing_country
+    @billingCountry = billingCountry
     @ordernum = ordernum
   end
 end
@@ -5523,7 +5523,7 @@ class BillingInvoiceInfoDetailStruct
   end
 
   def end=(value)
-    @v_end = v_end
+    @v_end = value
   end
 
   def initialize(quantity = nil, service = nil, description = nil, v_end = nil, domain = nil, baseprice = nil, totalprice = nil, start = nil)

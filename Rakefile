@@ -52,7 +52,7 @@ Rake::RDocTask.new do |rdoc|
 end
 
 namespace :wsdl do
-  task :update => [:dump, :camelize]
+  task :update => [:dump]
 
   output = "lib/ovhrb/manager"
 
@@ -64,16 +64,5 @@ namespace :wsdl do
     Dir.chdir output do
       system program, "--wsdl", "https://www.ovh.com/soapi/soapi-re-1.9.wsdl", "--type", "client", "--force"
     end
-  end
-
-  task :camelize do
-    require 'lib/ovhrb/core_additions'
-    manager = File.join(output, 'manager.rb')
-    content = File.read(manager)
-    content.gsub!(/attr_accessor :(\w+)/) { x = $1.underscore; "attr_accessor :#{x}" }
-    content.gsub!(/(\w+) = nil/)          { x = $1.underscore; "#{x} = nil" }
-    content.gsub!(/@(\w+) = (\w+)/)       { x = $1.underscore; "@#{x} = #{x}" }
-    File.open(manager, 'w') { |f| f.write content }
-    raise "Invalid syntax" unless system('ruby', '-c', manager)
   end
 end
