@@ -51,13 +51,29 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
-task :update_wsdl do
-  program = %x(gem content soap4r --prefix |grep /bin/wsdl2ruby.rb).strip
-  raise "wsdl2ruby.rb not found" if program.empty?
-  require 'fileutils'
+namespace :wsdl do
+  task :update => [:dump, :camelize]
+
   output = "lib/ovhrb/manager"
-  FileUtils.mkpath output
-  Dir.chdir output do
-    system program, "--wsdl", "https://www.ovh.com/soapi/soapi-re-1.9.wsdl", "--type", "client", "--force"
+
+  task :dump do
+    program = %x(gem content soap4r --prefix |grep /bin/wsdl2ruby.rb).strip
+    raise "wsdl2ruby.rb not found" if program.empty?
+    require 'fileutils'
+    FileUtils.mkpath output
+    Dir.chdir output do
+      system program, "--wsdl", "https://www.ovh.com/soapi/soapi-re-1.9.wsdl", "--type", "client", "--force"
+    end
+  end
+
+  task :camelize do
+    require 'lib/ovhrb/core_additions'
+    manager = File.join(output, 'manager.rb')
+    content = File.read(manager)
+    content.gsub!(/attr_accessor :(\w+)/) { x = $1.underscore; "attr_accessor :#{x}" }
+    content.gsub!(/(\w+) = nil/)          { x = $1.underscore; "#{x} = nil" }
+    content.gsub!(/@(\w+) = (\w+)/)       { x = $1.underscore; "@#{x} = #{x}" }
+    File.open(manager, 'w') { |f| f.write content }
+    raise "Invalid syntax" unless system('ruby', '-c', manager)
   end
 end
