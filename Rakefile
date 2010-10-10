@@ -4,11 +4,11 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "ovh-rb"
+    gem.name = "piglop-ovh-rb"
     gem.summary = "ovh-rb helps you to use the OVH SOAPI in a ruby way "
-    gem.email = "aurelien.amilin@gmail.com"
-    gem.homepage = "http://github.com/holinnn/ovh-rb"
-    gem.authors = ["Aurélien AMILIN"]
+    gem.email = "mike@lepton.fr"
+    gem.homepage = "http://github.com/piglop/ovh-rb"
+    gem.authors = ["Michael Witrant", "Aurélien AMILIN"]
     gem.executables = ["ovhrb", "failover_check"]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
