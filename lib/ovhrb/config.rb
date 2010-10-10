@@ -12,9 +12,13 @@ module OvhRb
       end
     end
     
+    def map_alias(arg)
+      @aliases[arg] || arg
+    end
+    
     def map_aliases(args)
       args.map do |arg|
-        @aliases[arg] || arg
+        map_alias(arg)
       end
     end
     

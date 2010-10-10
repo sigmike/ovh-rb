@@ -9,6 +9,7 @@ begin
     gem.email = "aurelien.amilin@gmail.com"
     gem.homepage = "http://github.com/holinnn/ovh-rb"
     gem.authors = ["Aurélien AMILIN"]
+    gem.executables = ["ovhrb", "failover_check"]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

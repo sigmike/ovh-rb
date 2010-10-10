@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+require 'ovh-rb'
+require 'yaml'
+
+if ARGV.size < 2
+  STDERR.puts "Usage: #$0 <config file> <failover ip> <expected route> <servers...>"
+  exit 1
+end
+
+config_file, *args = ARGV
+
+OvhRb::Config.new(config_file) do |config|
+  args = config.map_aliases(args)
+  failover, expected_route, *servers = args
+
+  servers.each do |server|
+    failovers = config.dedicated_failover_list(server)
+    failovers.each do |server_failover|
+      if server_failover.ip == failover
+        actual_route = server_failover.routed_to
+        if actual_route != expected_route
+          puts "Routing #{failover} to #{expected_route} (was #{actual_route})"
+          #config.dedicated_failover_update server, failover, expected_route
+        else
+          puts "#{failover} already routed to #{expected_route}"
+        end
+        exit 0
+      end
+    end
+  end
+end
