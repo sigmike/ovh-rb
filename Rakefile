@@ -51,3 +51,13 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
+task :update_wsdl do
+  program = %x(gem content soap4r --prefix |grep /bin/wsdl2ruby.rb).strip
+  raise "wsdl2ruby.rb not found" if program.empty?
+  require 'fileutils'
+  output = "lib/ovhrb/manager"
+  FileUtils.mkpath output
+  Dir.chdir output do
+    system program, "--wsdl", "https://www.ovh.com/soapi/soapi-re-1.9.wsdl", "--type", "client", "--force"
+  end
+end
