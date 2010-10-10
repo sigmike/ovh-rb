@@ -1,6 +1,7 @@
 $: << File.dirname(__FILE__)
 
-require 'soap/wsdlDriver'
+$: << File.join(File.dirname(__FILE__), 'ovhrb', 'manager')
+require 'ovhrb/manager/managerDriver'
 require 'ovhrb/core_additions'
 require 'ovhrb/converter'
 require 'ovhrb/ovh_object'
