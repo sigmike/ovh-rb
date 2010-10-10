@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+require 'ovh-rb'
+require 'yaml'
+
+if ARGV.size < 2
+  STDERR.puts "Usage: #$0 <config file> <command> [<arguments...>]"
+  exit 1
+end
+
+config_file, command, *args = ARGV
+
+config = YAML.load(File.read(config_file))
+
+shortcuts = config["shortcuts"]
+if shortcuts
+  args.map! do |arg|
+    shortcuts[arg] || arg
+  end
+end
+
+OvhRb::Session.new(config['nic'], config['password']) do |session|
+  result = session.send(command, *args)
+  puts result.to_yaml if result
+end
