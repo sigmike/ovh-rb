@@ -20,10 +20,7 @@ OvhRb::Config.new(config_file) do |config|
       if server_failover.ip == failover
         actual_route = server_failover.routed_to
         if actual_route != expected_route
-          puts "Routing #{failover} to #{expected_route} (was #{actual_route})"
-          #config.dedicated_failover_update server, failover, expected_route
-        else
-          puts "#{failover} already routed to #{expected_route}"
+          config.dedicated_failover_update server, failover, expected_route
         end
         exit 0
       end
