@@ -10,16 +10,7 @@ end
 
 config_file, command, *args = ARGV
 
-config = YAML.load(File.read(config_file))
-
-shortcuts = config["shortcuts"]
-if shortcuts
-  args.map! do |arg|
-    shortcuts[arg] || arg
-  end
-end
-
-OvhRb::Session.new(config['nic'], config['password']) do |session|
-  result = session.send(command, *args)
+OvhRb::Config.new(config_file) do |config|
+  result = config.send(command, *args)
   puts result.to_yaml if result
 end

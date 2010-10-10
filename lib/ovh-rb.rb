@@ -6,4 +6,5 @@ require 'ovhrb/converter'
 require 'ovhrb/ovh_object'
 require 'ovhrb/soap_request_handler'
 require 'ovhrb/session'
+require 'ovhrb/config'
 
