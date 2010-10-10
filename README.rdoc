@@ -6,6 +6,25 @@ ovh-rb helps you to use the OVH SOAPI in a ruby way
  gem install ovh-rb
 
 == Usage
+
+=== Command line
+You can use the ovhrb script to run commands in a shell.
+
+First create a config file in YAML with your nic, password and shortcuts. For example:
+ ---
+ nic: XXX-ovh
+ password: XXX
+ shortcuts:
+  ded1: ksXXX.kimsufi.com
+  ded1_ip: X.X.X.X
+  ded2: ksXXX.kimsufi.com
+  ded2_ip: X.X.X.X
+  failover1: X.X.X.X
+
+Then you can run
+ ovhrb <your config file> dedicated_failover_update ded1 failover1 ded2_ip
+
+=== Library
 All methods are available here http://www.ovh.com/soapi/fr/
 
 For example :
